@@ -1,0 +1,36 @@
+<!--components/taskcard/taskcard.wxml-->
+ <!-- 任务修改，增加 -->
+<view class="card" style="width: 680rpx; height: 1222rpx; display: block; box-sizing: border-box">
+  <view class="body">
+    <view class="border" style="width: 619rpx; height: 458rpx; display: block; box-sizing: border-box">
+    <form bindsubmit="submit" style="width: 582rpx; height: 521rpx; display: block; box-sizing: border-box">
+      <cardinfo editable="true" />
+      <view class="image-list">
+        <view wx:for="{{imageList}}" wx:key="index">
+          <image src="{{item}}" mode="aspectFit" />
+        </view>
+      </view>
+      <view class="section" style="width: 150rpx; height: 195rpx; display: block; box-sizing: border-box; position: relative; left: 490rpx; top: -249rpx">
+        <view class="title1" style="width: 293rpx; height: 31rpx; display: block; box-sizing: border-box; position: relative; left: -322rpx; top: 67rpx">上传任务说明图片或文件：</view>
+        <view class="upload-section" style="width: 143rpx; height: 108rpx; display: block; box-sizing: border-box; position: relative; left: -29rpx; top: -43rpx">
+          <view class="upload-list">
+            <block wx:if="{{ isChoosingImage }}">
+              <view class="upload-item" wx:for="{{ imageList }}" wx:key="index">
+                <image src="{{ item }}" class="upload-image" />
+              </view>
+            </block>
+            <block wx:else>
+              <view class="upload-item" wx:for="{{ fileList }}" wx:key="index">
+                <text class="upload-file">{{ item.name }}</text>
+              </view>
+            </block>
+          </view>
+          <button class="upload-button" bindtap="chooseFile" style="width: 118rpx; height: 108rpx; display: block; box-sizing: border-box; left: 13rpx; top: 0rpx; position: relative">+ </button>
+        </view>
+      </view>
+      <button class="delete-button" bindtap="deleteCard" style="position: absolute; left: 622rpx; top: 129rpx; width: 59rpx; height: 59rpx; display: block; box-sizing: border-box">X</button>
+      
+    </form>
+  </view>
+</view>
+</view>

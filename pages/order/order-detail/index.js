@@ -4,7 +4,7 @@ import {
   fetchBusinessTime,
   fetchOrderDetail,
 } from '../../../services/order/orderDetail';
-import Toast from '../../cart/components/foorm/index';
+import Toast from '../../cart/components/addtask/addtask';
 import { getAddressPromise } from '../../usercenter/address/list/util';
 
 Page({

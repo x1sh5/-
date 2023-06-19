@@ -1,0 +1,33 @@
+<!--components/cardinfo/cardinfo.wxml-->
+<!-- 任务展示信息 -->
+<view class="border" style="width: 264px; height: 195px; display: block; box-sizing: border-box">
+<view class="section" style="width: 570rpx; height: 122rpx; display: block; box-sizing: border-box">
+        <view class="title" style="width: 296rpx; height: 40rpx; display: block; box-sizing: border-box">需求内容：</view>
+        <input style="width: 296rpx; height: 120rpx; display: block; box-sizing: border-box; left: 0rpx; top: 0rpx" class="input" name="code" placeholder="一句话简述任务内容" />
+        <input style="width: 244rpx; height: 228rpx; display: block; box-sizing: border-box; left: 326rpx; top: -231rpx; position: relative" class="input1" name="code" placeholder="简称" />
+</view>
+<view class="section">
+        <view class="row">
+          <picker bindchange="feedbackRatioChange" value="{{feedbackRatioIndex}}" range="{{feedbackRatioRange}}" class="input-small" name="feedbackRatio" style="width: 263rpx; height: 94rpx; display: block; box-sizing: border-box">
+            <view class="picker">回馈比: {{feedbackRatioRange[feedbackRatioIndex]}}%</view>
+          </picker>
+          <!-- 添加输入框的逻辑 -->
+          <view wx:if="{{feedbackRatioRange.length === 1 && feedbackRatioRange[0] === 100}}" style="width: 176rpx; height: 66rpx; display: block; box-sizing: border-box; position: relative; left: 197rpx; top: -94rpx">
+            <input style="width: 193rpx; height: 66rpx; display: block; box-sizing: border-box; left: 0rpx; top: 0rpx; position: relative" class="input-small" name="customFeedbackRatio" placeholder="具体金额" />
+          </view>
+          <picker bindchange="timeChange" value="{{time}}" mode="multiSelector" range="{{timeRange}}" class="input-small" name="time" style="width: 263rpx; height: 94rpx; display: block; box-sizing: border-box; position: relative; left: 0rpx; top: -66rpx">
+            <view class="picker" style="width: 312rpx; height: 57rpx; display: block; box-sizing: border-box">预计工时: {{time}}</view>
+          </picker>
+        </view>
+</view>
+<view class="section" style="width: 209rpx; height: 122rpx; display: block; box-sizing: border-box; position: relative; left: 390rpx; top: -329rpx">
+        <view class="title1" style="width: 200rpx; height: 52rpx; display: block; box-sizing: border-box; position: relative; left: 10rpx; top: 10rpx">发卡人：</view>
+        <input style="width: 160rpx; height: 17rpx; display: block; box-sizing: border-box; position: relative; font-size: 25rpx;left: 10rpx; top: -22rpx" type="nickname" name="nickname" placeholder="当前微信名" />
+</view>
+<view class="section" style="position: relative; left: 0rpx; top: -282rpx">
+        <view class="title" style="position: relative; left: 0rpx; top: -33rpx">任务说明：</view>
+        <label for="info" class="input" style="position: relative; left: 0rpx; top: -19rpx">
+          <textarea id="info" name="info" placeholder="*要求任务需求、制作方法明确，步骤条理清晰。验收核对皆以任务说明为准。" maxlength="10000" style="width: 570rpx; height: 343rpx; display: block; box-sizing: border-box; left: 0rpx; top: 0rpx; position: relative"></textarea>
+        </label>
+</view>
+</view>

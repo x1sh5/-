@@ -1,0 +1,219 @@
+.title{
+  color:#161616;
+  font-size: 30rpx;
+  margin-bottom: 1rpx;
+  font-weight: bold;
+}
+.info{
+  color:#080808;
+  font-size: 30rpx;
+
+}
+.info2{
+  color:#ffffff;
+  font-size: 180rpx;
+
+}
+
+
+.body {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 0rpx;
+}
+.search {
+  display: flex;
+  align-items: center;
+}
+.home-page-header .t-search__input-container {
+  border-radius: 5rpx !important;
+  height: 50rpx !important;
+}
+.home-page-header .t-search__input {
+  font-size: 28rpx !important;
+  color: rgb(116, 116, 116) !important;
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.button {
+  height: 50rpx;
+  width: 120rpx;
+  background-color: rgb(241, 241, 241);
+  border-radius: 2px;
+  font-size: 40rpx;
+  color: rgb(197, 197, 197);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+/* 在合适的位置添加以下代码 */
+.card {
+  border: 0rpx solid rgb(214, 214, 214);
+  padding: 10rpx;
+  background-color: rgba(34, 34, 34, 0.1);
+  margin: 0 40rpx;
+  border-radius: 10rpx;
+  overflow: hidden;
+  
+}
+
+.section {
+  margin-bottom: 10rpx;
+}
+
+.title {
+  font-weight: bold;
+  margin-bottom: 5rpx;
+  font-size: 25rpx;
+  
+}
+.title1 {
+  font-weight: bold;
+  margin-bottom: 5rpx;
+  font-size: 25rpx;
+  
+}
+.title2 {
+  font-weight: bold;
+  margin-bottom: 5rpx;
+  font-size: 25rpx;
+  
+  
+}
+.title3 {
+  font-weight: bold;
+  margin-bottom: 5rpx;
+  font-size: 30rpx;
+  color: rgb(197, 197, 197);
+  
+}
+.input {
+  border: 1rpx solid #999;
+  padding: 5rpx;
+  margin-bottom: 5rpx;
+  border: none;
+  outline: none;
+}
+.input1 {
+  border: 0rpx solid #999;
+  font-size: 120rpx;
+  padding: 5rpx;
+  margin-bottom: 5rpx;
+  border: none;
+  outline: none;
+}
+
+.input-small {
+  border: 1rpx solid #999;
+  font-size: 25rpx;
+  padding: 5rpx;
+  margin-right: 10rpx;
+  border: none;
+  outline: none;
+}
+
+.picker {
+  margin-bottom: 20rpx;
+  font-size: 20rpx; /* 设置字体大小为14像素 */
+  border: 1rpx solid rgb(117, 110, 110); /* 设置边框样式 */
+  padding: 15rpx; /* 设置内边距 */
+  width: 130rpx; /* 设置边框长度 */
+}
+
+textarea.input {
+  border: 1rpx solid #999;
+  padding: 5rpx;
+  margin-bottom: 5rpx;
+  height: 100rpx;
+}
+
+.image-list {
+  margin-bottom: 10rpx;
+}
+
+.image-list image {
+  width: 100%;
+  height: auto;
+  margin-bottom: 5rpx;
+}
+
+.upload-section {
+  margin-top: 10rpx;
+}
+
+.upload-list {
+  margin-bottom: 10rpx;
+}
+
+.upload-item {
+  margin-bottom: 5rpx;
+}
+
+.upload-image {
+  width: 100%;
+  height: auto;
+}
+
+.upload-file {
+  margin-left: 5rpx;
+}
+
+.delete-button {
+  background-color: transparent;
+  border: 0rpx solid #999;
+  color: rgb(197, 191, 191);
+  font-size: 14px;
+  border: none;
+  text-align: center;
+}
+.card-background {
+  border: 20rpx solid #000;
+  background-color: rgba(0, 0, 0, 0);
+  padding: 10rpx;
+  padding: 15rpx; /* 设置内边距 */
+  width: 200rpx; /* 设置边框长度 */
+
+}
+
+.black-border {
+  border: 5rpx solid black;
+  padding: 10rpx;
+  /* 其他样式属性 */
+}
+.button4 {
+  background-color: transparent;
+  border: 0rpx solid #999;
+  color: rgb(197, 191, 191);
+  font-size: 18rpx;
+  border: none;
+  text-align: center;
+}
+.button5 {
+  background-color: rgb(255, 255, 255);
+  border: 0rpx solid #999;
+  color: #07c160;
+  font-size: 37rpx;
+  border: none;
+  text-align: center;
+}
+.button6 {
+  background-color: #07c160;
+  border: 0rpx solid #999;
+  color: rgb(255, 255, 255);
+  font-size: 37rpx;
+  border: none;
+  text-align: center;
+ 
+}
+.border {
+  border: 3rpx solid black;
+  background-color: rgba(0, 0, 0, 0); /* 内部透明 */
+  margin: 10rpx 0;
+}

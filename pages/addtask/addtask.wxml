@@ -1,0 +1,68 @@
+<view class="body">
+  <view class="home-page-header">
+    <view class="search" bindtap="navToSearchPage">
+      <t-search t-class-input="t-search__input" t-class-input-container="t-search__input-container" placeholder="搜寻模板" leftIcon="" disabled>
+        <t-icon slot="left-icon" prefix="wr" name="search" size="40rpx" color="#bbb" />
+      </t-search>
+    </view>
+  </view>
+
+  <view class="buttons">
+    <view class="button" bindtap="button1Click">
+      <view class="button-text">历史模板</view>
+    </view>
+    <view class="button" bindtap="button2Click">
+      <view class="button-text">草稿箱</view>
+    </view>
+    <view class="button" bindtap="button3Click">
+      <view class="button-text">审核区间</view>
+    </view>
+  </view>
+</view>
+
+<!-- 使用自定义组件，在当前page中的json中usingComponents添加 -->
+    <!-- "taskcard": "/components/taskcard/taskcard", -->
+<taskcard />
+
+<view wx:for="{{cards}}" wx:key="index" class="card">
+  <view>
+    <text>{{item.title}}</text>
+  </view>
+  <view>
+    <text>{{item.content}}</text>
+  </view>
+</view>
+<!-- 循环显示卡片组件 -->
+<view wx:for="{{zhizuoCards}}" wx:key="index">
+  <zhizuo></zhizuo>
+</view>
+
+
+<t-demo desc="组合按钮" style="position: relative; left: 0rpx; top: 104rpx">
+  <view class="title4" style="width: 361rpx; height: 78rpx; display: block; box-sizing: border-box; position: relative; left: 40rpx; top: 0rpx">+点击添加新分项</view>
+  <view class="button-group" style="position: relative; left: 0rpx; top: 31rpx; width: 750rpx; height: 78rpx; display: block; box-sizing: border-box">
+    <button class="button4" bindtap="addAudit" style="position: relative; left: -291rpx; top: -68rpx; width: 99rpx; height: 36rpx; display: block; box-sizing: border-box">审核</button>
+    <button class="button4" bindtap="addInfo" style="position: relative; left: -193rpx; top: -104rpx; width: 99rpx; height: 36rpx; display: block; box-sizing: border-box">信息</button>
+    <button class="button4" bindtap="addTech" style="position: relative; left: -94rpx; top: -139rpx; width: 99rpx; height: 36rpx; display: block; box-sizing: border-box">技术</button>
+    <button class="button4" bindtap="addFund" style="position: relative; left: 5rpx; top: -174rpx; width: 99rpx; height: 36rpx; display: block; box-sizing: border-box">资金</button>
+    <button class="button4" bindtap="addDistribution" style="position: relative; left: 104rpx; top: -209rpx; width: 99rpx; height: 36rpx; display: block; box-sizing: border-box">分发</button>
+    <button class="button4" bindtap="addConstruction" style="position: relative; left: 202rpx; top: -244rpx; width: 99rpx; height: 36rpx; display: block; box-sizing: border-box">建设</button>
+    <button class="button4" bindtap="addProduction" style="position: relative; left: 300rpx; top: -279rpx; width: 99rpx; height: 36rpx; display: block; box-sizing: border-box">制作</button> 
+  </view>
+</t-demo>
+<view wx:for="{{cards}}" wx:key="id">
+  <view wx:if="{{item.type === 'zhizuo'}}">
+    <AuditCard></AuditCard>
+  </view>
+  <view wx:if="{{item.type === 'info'}}">
+    <InfoCard></InfoCard>
+  </view>
+  <!-- 为其他卡片类型添加类似的条件渲染代码 -->
+</view>
+
+<t-demo desc="组合按钮2">
+  <view class="button-group" style="width: 750rpx; height: 422rpx; display: block; box-sizing: border-box; position: relative; left: 0rpx; top: 84rpx">
+    <button class="button5" bindtap="button5Click" style="position: relative; left: 0rpx; top: 54rpx; width: 458rpx; height: 68rpx; display: flex; justify-content: center; align-items: center; box-sizing: border-box">保存草稿</button>
+    <button class="button6" style="position: relative; left: 0rpx; top: 85rpx; width: 458rpx; height: 68rpx; display: flex; justify-content: center; align-items: center; box-sizing: border-box">审核发布</button>
+  </view>
+</t-demo>

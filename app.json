@@ -10,7 +10,7 @@
     "pages/goods/category/index",
     "pages/goods/search/index",
     "pages/goods/result/index",
-    "pages/foorm/index",
+    "pages/addtask/addtask",
     "pages/order/order-confirm/index",
     "pages/order/receipt/index",
     "pages/order/pay-result/index",
@@ -54,7 +54,7 @@
         "text": "首页"
       },
       {
-        "pagePath": "pages/foorm/index",
+        "pagePath": "pages/addtask/addtask",
         "text": "发布任务"
       },
       {

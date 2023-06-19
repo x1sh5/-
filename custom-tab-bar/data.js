@@ -7,7 +7,7 @@ export default [
   {
     icon: 'add',
     text: '发布任务',
-    url: 'pages/foorm/index',
+    url: 'pages/addtask/addtask',
   },
   {
     icon: 'person',

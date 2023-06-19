@@ -3,9 +3,7 @@
   "backgroundTextStyle": "light",
   "enablePullDownRefresh": true,
   "usingComponents": {
-    "zhizuo": "/pages/renwu/zhizuo/zhizuo",
-    "renwu-zhizuo": "/pages/renwu/zhizuo/zhizuo",
-    "my-component": "/pages/my-component/my-component",
+    "taskcard": "/components/taskcard/taskcard",
     "t-search": "tdesign-miniprogram/search/search",
     "t-loading": "tdesign-miniprogram/loading/loading",
     "t-swiper": "tdesign-miniprogram/swiper/swiper",
