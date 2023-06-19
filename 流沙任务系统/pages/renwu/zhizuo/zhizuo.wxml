@@ -1,0 +1,19 @@
+<view class="zhizuoCards">
+<view class='list' style="width: 750rpx; height: 383rpx; display: block; box-sizing: border-box">
+ <view class='list-img' style="width: 427rpx; height: 265rpx; display: block; box-sizing: border-box; position: relative; left: 298rpx; top: 10rpx">
+   <image src='../../images/001.png' style="width: 722rpx; height: 378rpx; display: inline-block; box-sizing: border-box; position: relative; left: -296rpx; top: 0rpx"></image>
+   </view>
+<view class='list-info' style="width: 700rpx; height: 394rpx; display: block; box-sizing: border-box; position: relative; left: 26rpx; top: -256rpx">
+   <view class='title' style="width: 150rpx; height: 38rpx; display: block; box-sizing: border-box">需求内容</view>
+   <view class='info' style="width: 312rpx; height: 118rpx; display: block; box-sizing: border-box; left: 0rpx; top: 0rpx">一句话概括内容公司架构细则,文档撰写</view>
+   <view class='info2' style="width: 378rpx; height: 225rpx; display: block; box-sizing: border-box; left: 333rpx; top: -169rpx; position: relative">简称</view>
+   <view class='title' style="width: 150rpx; height: 50rpx; display: block; box-sizing: border-box; position: relative; left: 275rpx; top: -90rpx">发起人</view>
+   <view class='info' style="width: 118rpx; height: 38rpx; display: block; box-sizing: border-box; position: relative; left: 275rpx; top: -113rpx">20h</view>
+   <view class='title' style="width: 150rpx; height: 38rpx; display: block; box-sizing: border-box; position: relative; left: 0rpx; top: -286rpx">预计工时</view>
+   <view class='info' style="width: 118rpx; height: 50rpx; display: block; box-sizing: border-box; position: relative; left: 0rpx; top: -289rpx">20h</view>
+   <view class='title' style="position: relative; left: 156rpx; top: -376rpx; width: 118rpx; height: 50rpx; display: block; box-sizing: border-box">回馈比</view>
+   <view class='info' style="width: 150rpx; height: 50rpx; display: block; box-sizing: border-box; position: relative; left: 162rpx; top: -390rpx">20h</view>
+
+  </view>
+</view>
+</view>

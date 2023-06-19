@@ -1,0 +1,7 @@
+<view class="register-prompt" wx:if="{{show}}" catchtap="preventPropagation">
+  <view class="overlay" bindtap="handleClose"></view>
+  <view class="content">
+    <text>为保证社区内信息安全，注册后可查看</text>
+    <text class="register-link" bindtap="handleRegister">去注册</text>
+  </view>
+</view>

@@ -1,0 +1,60 @@
+.table {
+  display: table;
+  width: 100%;
+}
+
+.table-row {
+  display: table-row;
+}
+
+.table-cell {
+  display: table-cell;
+  width: 25%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  font-size: 10px;
+}
+
+.textarea-field {
+  width: 100%;
+  min-height: 30px;
+  max-height: 200px;
+  resize: none;
+  border: none;
+  outline: none;
+  background-color: #f8f8f8;
+}
+
+.add-row-btn {
+  display: inline-block;
+  padding: 10px;
+  margin-top: 10px;
+  background-color: #1aad19;
+  color: #ffffff;
+  font-size: 10px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.delete-row-btn {
+  display: inline-block;
+  padding: 10px;
+  margin-top: 10px;
+  margin-left: 10px;
+  background-color: #adadad;
+  color: #ffffff;
+  font-size: 10px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.save-btn {
+  display: inline-block;
+  padding: 10px;
+  margin-top: 10px;
+  background-color: #1a1a1a;
+  color: #ffffff;
+  font-size: 14px;
+  text-align: center;
+  cursor: pointer;
+}

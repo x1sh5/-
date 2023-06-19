@@ -1,0 +1,6 @@
+<view>
+  <view wx:for="{{draftDataStorage}}" wx:key="index">
+    <text class="card-title">{{item.title}}</text>
+    <text class="card-description">{{item.description}}</text>
+  </view>
+</view>

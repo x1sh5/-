@@ -1,0 +1,16 @@
+<view class="home-page-header" style="width: 748rpx; height: 26rpx; display: flex; box-sizing: border-box">
+  <view class="search" bind:tap="navToSearchPage" style="position: relative; left: 36rpx; top: 29rpx">
+    <t-search t-class-input="t-search__input" t-class-input-container="t-search__input-container" placeholder="查找审核区间" leftIcon="" disabled>
+      <t-icon slot="left-icon" prefix="wr" name="search" size="40rpx" color="#bbb" />
+    </t-search>
+  </view>
+
+  <button class="button1Click" style="width: 392rpx; height: 59rpx; display: flex; box-sizing: border-box; left: 26rpx; top: 29rpx; position: relative" bindtap="navigateToNewShenhe">
+    <text class="add-btn-text">*添加新的审核区间</text>
+</button>
+
+  <!-- 其他页面标题排列区域 -->
+</view>
+
+
+

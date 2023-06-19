@@ -1,0 +1,10 @@
+<view class="container">
+  <view class="info">
+    <text>用户名：</text>
+    <text>{{username}}</text>
+  </view>
+  <view class="info">
+    <text>邮箱：</text>
+    <text>{{email}}</text>
+  </view>
+</view>

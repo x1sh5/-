@@ -1,0 +1,11 @@
+{
+  
+ "navigationBarTitleText": "页面标题",
+  "navigationBarBackgroundColor": "#ffffff",
+  "navigationBarTextStyle": "black",
+  "component": true,
+   "usingComponents": {
+    
+   
+  }
+}

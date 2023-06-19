@@ -1,0 +1,93 @@
+
+
+.button1Click {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  height: 50rpx;
+  width: 300rpx;
+  background-color: rgb(241, 241, 241);
+  border-radius: 2px;
+  font-size: 35rpx;
+  color: rgb(116, 116, 116);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.home-page-header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.home-page-header .t-search__input-container {
+  border-radius: 30rpx;
+  height: 60rpx;
+  width: 250rpx;
+  margin-right: 0rpx;
+}
+
+.home-page-header .t-search__input {
+  font-size: 10rpx;
+  color: rgb(116, 116, 116);
+  width: 100%;
+}
+
+.body {
+  margin: 40rpx;
+}
+
+.section {
+  margin: 69rpx 0 80rpx;
+}
+
+.table {
+  display: flex;
+  flex-direction: column;
+  border-collapse: collapse;
+  border: 1px solid #000;
+}
+
+.table-row {
+  display: flex;
+  flex-direction: row;
+  border-bottom: 1px solid #000;
+}
+
+.table-cell {
+  flex: 1;
+  padding: 8px;
+  border-right: 1px solid #000;
+}
+
+.header {
+  font-weight: bold;
+}
+
+.table {
+  /* 其他样式设置 */
+  overflow: hidden; /* 限制内容超出部分不显示 */
+  resize: both; /* 允许垂直和水平调整大小 */
+}
+
+.table-row {
+  /* 其他样式设置 */
+  display: flex;
+}
+
+.table-cell {
+  /* 其他样式设置 */
+  flex-grow: 1; /* 填充剩余空间 */
+}
+
+.textarea-field {
+  /* 其他样式设置 */
+  width: 100%;
+  height: auto; /* 高度自适应内容 */
+  min-height: 50px; /* 最小高度设置 */
+  border: none; /* 去除边框 */
+  resize: none; /* 禁止用户调整大小 */
+  overflow: hidden; /* 隐藏溢出内容 */
+}

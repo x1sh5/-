@@ -1,0 +1,22 @@
+.card {
+
+  
+    background-color: #4e4949;
+  }
+  .title{
+    color:#046ef1;
+    font-size: 30rpx;
+    margin-bottom: 1rpx;
+    font-weight: bold;
+  }
+  .info{
+    color:#080808;
+    font-size: 30rpx;
+  
+  }
+  .info2{
+    color:#ffffff;
+    font-size: 180rpx;
+  
+  
+}
