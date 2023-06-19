@@ -9,7 +9,7 @@ App({
   },
   onShow: function () {
     updateManager();
-    
+
   },
   
 });

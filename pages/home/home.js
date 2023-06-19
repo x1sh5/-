@@ -5,15 +5,18 @@ import {
   fetchGoodsList
 } from '../../services/good/fetchGoods';
 
-function fetchUserData(userId) {
+async function fetchUserData(userId) {
   return new Promise((resolve, reject) => {
     const app = getApp();
     wx.request({
-      url: `${app.globalData.apiBaseUrl}/Assignment`,
+      //直接使用地址拼接
+      url: `${app.globalData.apiBaseUrl}/Assignment/`+(isNaN(parseInt(userId))?'':userId),
       method: "GET",
-      data: {
-        userId: userId,
-      },
+      // data 模式会转换成url参数，也就是url会转换成 ${app.globalData.apiBaseUrl}/Assignment?userId=
+      //但真实的请求应该是 ${app.globalData.apiBaseUrl}/Assignment/userId
+      // data: {
+      //   userId: userId,
+      // },
       success: (res) => {
         if (res.statusCode === 200) {
           resolve(res.data);
@@ -89,20 +92,23 @@ Page({
     this.setData({ showRegisterPrompt: false });
   },
 
-  onShow: async function () {
+  onShow:async function () {
+    //loadHomePage()函数
+    this.loadHomePage();
     try {
       const data = await fetchUserData();
 
-      console.log(data);  // 查看返回的数据
+      console.log(data.$values);  // 查看返回的数据
       this.setData({
-        users: data
+        //使用data.$values,我使用后端框架的默认数据格式，后面会调整
+        tasks: data.$values
       });
     } catch (error) {
       console.error("Error getting data from the API:", error);
     }
   },
 
-  onLoad: async function (options) {
+  onLoad:async function (options) {
     const { userId } = options;
     try {
       const data = await fetchUserData(userId);
@@ -143,7 +149,7 @@ Page({
     this.loadHomePage();
   },
 
-  loadHomePage() {
+ loadHomePage: function(){
     wx.stopPullDownRefresh();
 
     this.setData({
