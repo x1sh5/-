@@ -4,7 +4,7 @@
   <view class="body">
     <view class="border" style="width: 619rpx; height: 458rpx; display: block; box-sizing: border-box">
     <form bindsubmit="submit" style="width: 582rpx; height: 521rpx; display: block; box-sizing: border-box">
-      <cardinfo editable="true" />
+      <cardinfo editable="{{true}}" />
       <view class="image-list">
         <view wx:for="{{imageList}}" wx:key="index">
           <image src="{{item}}" mode="aspectFit" />
