@@ -33,9 +33,6 @@
 
 <view>
   <block wx:for="{{ tasks }}"  wx:key="id">
-    <view>
-      <text>编号: {{ item.id }}</text>
-      <text>内容: {{ item.title }}</text>
-    </view>
+    <cardinfo task="{{item}}" />
   </block>
 </view>

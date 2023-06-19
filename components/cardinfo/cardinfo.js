@@ -7,6 +7,10 @@ Component({
     editable:{
       type:Boolean,
       value:false
+    },
+    task: {
+      type:Object,
+      value:{}
     }
   },
 
@@ -14,7 +18,7 @@ Component({
    * 组件的初始数据
    */
   data: {
-
+    task: {}
   },
 
   /**
