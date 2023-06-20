@@ -1,11 +1,11 @@
 /* components/cardinfo/cardinfo.wxss */
 @import url('/common/common.less');
 
+
 .border {
   box-sizing: border-box;
   align-self: center;
-  width: 100%; 
-  height: 195px; 
+  .size(100%,195px);
   display: block;
   border: 3rpx solid black;
   background-color: rgba(0, 0, 0, 0); /* 内部透明 */
@@ -13,14 +13,12 @@
   padding: 10px;
 }
 .input {
-  width: 296rpx; 
-  height: 120rpx; 
+  .size(296px,120px);
   display: block; 
   box-sizing: border-box; 
   left: 0rpx; 
   top: 0rpx;
-  border-bottom: 3rpx rgb(243, 10, 10);
-  border-bottom-style: dashed;
+  border-bottom: 3rpx dashed rgb(243, 10, 10);
   padding: 5rpx;
   margin-bottom: 5rpx;
   outline: 1rpx solid black;
@@ -131,8 +129,7 @@
   justify-content: flex-end;
 }
 .button {
-  height: 50rpx;
-  width: 120rpx;
+  .size(50rpx,120rpx);
   background-color: rgb(241, 241, 241);
   border-radius: 2px;
   font-size: 40rpx;
@@ -140,7 +137,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-
 }
 
 /* 在合适的位置添加以下代码 */
@@ -151,7 +147,6 @@
   margin: 0 40rpx;
   border-radius: 10rpx;
   overflow: hidden;
-  
 }
 
 .section {
@@ -159,19 +154,13 @@
 }
 
 
-.title1 {
+.title1,.title2 {
   font-weight: bold;
   margin-bottom: 5rpx;
   font-size: 25rpx;
   
 }
-.title2 {
-  font-weight: bold;
-  margin-bottom: 5rpx;
-  font-size: 25rpx;
-  
-  
-}
+
 .title3 {
   font-weight: bold;
   margin-bottom: 5rpx;
@@ -189,10 +178,6 @@
   outline: none;
 }
 
-
-
-
-
 textarea.input {
   border: 1rpx solid #999;
   padding: 5rpx;
@@ -204,9 +189,12 @@ textarea.input {
   margin-bottom: 10rpx;
 }
 
+.upload-image {
+  .size(100%,auto);
+}
+
 .image-list image {
-  width: 100%;
-  height: auto;
+  .upload-image();
   margin-bottom: 5rpx;
 }
 
@@ -220,11 +208,6 @@ textarea.input {
 
 .upload-item {
   margin-bottom: 5rpx;
-}
-
-.upload-image {
-  width: 100%;
-  height: auto;
 }
 
 .upload-file {
@@ -242,7 +225,6 @@ textarea.input {
 .card-background {
   border: 20rpx solid #000;
   background-color: rgba(0, 0, 0, 0);
-  padding: 10rpx;
   padding: 15rpx; /* 设置内边距 */
   width: 200rpx; /* 设置边框长度 */
 
@@ -276,5 +258,4 @@ textarea.input {
   font-size: 37rpx;
   border: none;
   text-align: center;
- 
 }
