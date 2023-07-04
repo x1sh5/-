@@ -1,9 +1,11 @@
-<!-- 3.列表数据展示 -->
-<view class='list' style="width: 750rpx; height: 383rpx; display: block; box-sizing: border-box">
+<!--pages/h-renwu/h-renwu.wxml-->
+<!-- 在首页展示的任务卡标题样式组件。在每张任务卡表单生成后，以这个形式出现在首页的任务卡标题，点击即可转到相应卡片内容 -->
+
+<view class='list' style="width: 711rpx; height: 394rpx; display: block; box-sizing: border-box">
  <view class='list-img' style="width: 427rpx; height: 265rpx; display: block; box-sizing: border-box; position: relative; left: 298rpx; top: 10rpx">
-   <image src='../../images/001.png' style="width: 722rpx; height: 378rpx; display: inline-block; box-sizing: border-box; position: relative; left: -296rpx; top: 0rpx"></image>
+   <image src='../../images/001.png' style="width: 765rpx; height: 368rpx; display: inline-block; box-sizing: border-box; position: relative; left: -317rpx; top: 0rpx"></image>
    </view>
-<view class='list-info' style="width: 700rpx; height: 394rpx; display: block; box-sizing: border-box; position: relative; left: 26rpx; top: -256rpx">
+<view class='list-info' style="width: 694rpx; height: 385rpx; display: block; box-sizing: border-box; position: relative; left: 17rpx; top: -256rpx">
    <view class='title' style="width: 150rpx; height: 38rpx; display: block; box-sizing: border-box">需求内容</view>
    <view class='info' style="width: 312rpx; height: 118rpx; display: block; box-sizing: border-box; left: 0rpx; top: 0rpx">一句话概括内容公司架构细则,文档撰写</view>
    <view class='info2' style="width: 378rpx; height: 225rpx; display: block; box-sizing: border-box; left: 333rpx; top: -169rpx; position: relative">简称</view>

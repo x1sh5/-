@@ -1,4 +1,4 @@
-// pages/shenhe/shenhe.js
+// pages/drafts/drafts.js
 Page({
 
   button3Click() {

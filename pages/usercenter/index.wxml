@@ -1,4 +1,5 @@
-
+ <!-- 个人中心页面 -->
+  <!-- 个人信息区 *现存bug不会随着页面拖动而变动，是固定的，导致上划时会重叠在一起；-->
 <t-user-center-card style="position: relative; left: 0rpx; top: 150rpx"
   userInfo="{{userInfo}}"
   isPhoneHide="{{true}}"
@@ -8,21 +9,24 @@
   currAuthStep="{{currAuthStep}}"
   bind:gotoUserEditPage="gotoUserEditPage"
 />
-
+ <!-- 我发布的 区域  * bug“我发布的”的一栏数字角标无法取消；-->
 <view class="content-wrapper" style="width: 750rpx; height: 1353rpx; display: block; box-sizing: border-box; left: 0rpx; top: 60rpx">
   <view class="divider"></view>
   <view class="order-group-wrapper">
   <t-order-group orderTagInfos="{{orderTagInfos}}" bind:onClickTop="jumpAllOrder" bind:onClickItem="jumpNav" />
 </view>
 <view class="divider"></view>
+ <!-- 我接受的 区域 
+  ·第二个“我发布的”其实是“我接受的”找不到修改地方，名称修改变成了统一修改；
+··任务提醒功能 未做
+·设置“当前需求”按钮功能，其实就是进行一次判定，判定检测当前用户有没有接收任务卡的状态，若有直接转到当前任务界面，若无便跳出提示“当前为进行任务”；
+·文件管理为用户所有查看文件的缓存；-->
 <view class="order-group-wrapper2">
   <t-order-group orderTagInfos="{{orderTagInfos2}}" bind:onClickTop="jumpToOtherPage" bind:onClickItem="jumpNav2" />
   <view class="divider"></view>
 </view>
-
-
-
-
+ <!-- ·帮助中心跳转到固定页面，一些使用说明方法之类的，后续提供；
+·技能互助档案暂时为跳转到公众号，暂时空着； -->
   <view wx:for="{{menuData}}" wx:key="item" class="cell-box">
     <t-cell-group>
       <t-cell
@@ -45,6 +49,7 @@
     </t-cell-group>
   </view>
 </view>
+ <!-- 显示版本号 *客服部分可删除 -->
 <view class="footer__version" wx:if="{{versionNo !== ''}}">当前版本 {{versionNo}}</view>
 <t-popup visible="{{showMakePhone}}" placement="bottom" bind:visible-change="closeMakePhone" data-index="2">
   <view class="popup-content">

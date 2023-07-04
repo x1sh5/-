@@ -1,3 +1,4 @@
+ <!-- pages/order/order-list/index格式通用页面，但每一组需有自己的筛选逻辑还未设置，待修改 -->
 <view class="page-container">
   <view class="tab-bar">
     <view class="tab-bar__placeholder" />

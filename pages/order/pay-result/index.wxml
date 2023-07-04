@@ -1,3 +1,4 @@
+ <!-- pages/order/pay-result/inder 单向任务支付成功界面 -->
 <t-navbar background="#ffffff" left-icon="slot" />
 <view class="pay-result">
 	<view class="pay-status">
@@ -5,7 +6,7 @@
 		<text>支付成功</text>
 	</view>
 	<view class="pay-money">
-		微信支付：
+	已提交审核
 		<price
 		 wx:if="{{totalPaid}}"
 		 price="{{totalPaid}}"
@@ -15,7 +16,7 @@
 		/>
 	</view>
 	<view class="btn-wrapper">
-		<view class="status-btn" data-type="orderList" bindtap="onTapReturn">查看订单</view>
+		<view class="status-btn" data-type="orderList" bindtap="onTapReturn">查看任务</view>
 		<view class="status-btn" data-type="home" bindtap="onTapReturn">返回首页</view>
 	</view>
 </view>

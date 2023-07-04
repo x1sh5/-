@@ -48,11 +48,7 @@ Page({
           typeVisible: true,
         });
         break;
-      case 'name':
-        wx.navigateTo({
-          url: `/pages/usercenter/name-edit/index?name=${nickName}`,
-        });
-        break;
+      
       case 'avatarUrl':
         this.toModifyAvatar();
         break;

@@ -1,3 +1,4 @@
+ <!-- 页面布局暂未设计，下面代码待修改 -->
 <wxs module="isUrl">
 	var isUrl = function(item) {
 	return item.indexOf('http') > -1;

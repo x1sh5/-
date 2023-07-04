@@ -3,6 +3,7 @@
   "backgroundTextStyle": "light",
   "enablePullDownRefresh": true,
   "usingComponents": {
+    "task-card": "/components/taskcard/taskcard",
     "taskcard": "/components/taskcard/taskcard",
     "t-search": "tdesign-miniprogram/search/search",
     "t-loading": "tdesign-miniprogram/loading/loading",
@@ -14,7 +15,7 @@
     "t-tabs": "tdesign-miniprogram/tabs/tabs",
     "t-tab-panel": "tdesign-miniprogram/tab-panel/tab-panel",
     "goods-list": "/components/goods-list/index",
-    "card": "/pages/renwu/zhizuo/zhizuo",
+    "card": "/components/taskcard/taskcard",
     "load-more": "/components/load-more/index"}
    
     

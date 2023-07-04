@@ -20,6 +20,7 @@ const menuData = [
       tit: '',
       url: '',
       type: 'address',
+      path: '/pages/bindBankCard/bindBankCard', // 添加要跳转的页面路径
      
     },
     {
@@ -180,7 +181,7 @@ Page({
     switch (type) {
       case 'address': {
         wx.navigateTo({
-          url: '/pages/usercenter/address/list/index'
+          url: '/pages/order/bindBankCard/index'
         });
         break;
       }
@@ -208,12 +209,7 @@ Page({
         });
         break;
       }
-      case 'coupon': {
-        wx.navigateTo({
-          url: '/pages/coupon/coupon-list/index'
-        });
-        break;
-      }
+  
       default: {
         Toast({
           context: this,
@@ -232,7 +228,7 @@ Page({
 
     if (status === 0) {
       wx.navigateTo({
-        url: '/pages/order/after-service-list/index'
+        url: '/pages/drafts/drafts'
       });
     } else {
       wx.navigateTo({

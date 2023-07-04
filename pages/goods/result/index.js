@@ -1,6 +1,6 @@
 /* eslint-disable no-param-reassign */
 import { getSearchResult } from '../../../services/good/fetchSearchResult';
-import Toast from '../../cart/components/form/index';
+
 
 const initFilters = {
   overall: 1,

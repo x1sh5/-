@@ -1,5 +1,5 @@
 {
-  "projectname": "%E6%B5%81%E6%B2%99%E4%BB%BB%E5%8A%A1%E7%B3%BB%E7%BB%9F",
+  "projectname": "flow-master",
   "setting": {
     "compileHotReLoad": true,
     "urlCheck": false
@@ -27,9 +27,10 @@
           "scene": null
         },
         {
-          "name": "示例页-商品列表",
-          "pathName": "pages/goods/list/index",
+          "name": "",
+          "pathName": "pages/talk/talk",
           "query": "",
+          "launchMode": "default",
           "scene": null
         },
         {
@@ -39,75 +40,12 @@
           "scene": null
         },
         {
-          "name": "示例页-商品评论",
-          "pathName": "pages/goods/comments/index",
-          "query": "",
-          "scene": null
-        },
-        {
-          "name": "示例页-售后列表",
-          "pathName": "pages/order/after-service-list/index",
-          "query": "",
-          "scene": null
-        },
-        {
-          "name": "示例页-售后详情",
-          "pathName": "pages/order/after-service-detail/index",
-          "query": "rightsNo=123123423",
-          "scene": null
-        },
-        {
           "name": "示例页-搜索页",
           "pathName": "pages/goods/search/index",
           "query": "",
           "scene": null
         },
         {
-          "name": "示例页-搜索结果",
-          "pathName": "pages/goods/result/index",
-          "query": "",
-          "scene": null
-        },
-        {
-          "name": "示例页-商品评价",
-          "pathName": "pages/goods/comments/create/index",
-          "query": "",
-          "scene": null
-        },
-        {
-          "name": "示例页-申请售后",
-          "pathName": "pages/order/apply-service/index",
-          "query": "orderNo=132222623132329291&skuId=135691625",
-          "scene": null
-        },
-        {
-          "name": "示例页-发票详情",
-          "pathName": "pages/order/invoice/index",
-          "query": "orderNo=132381532610540875",
-          "scene": null
-        },
-        {
-          "name": "",
-          "pathName": "pages/goods/comments/index",
-          "query": "",
-          "launchMode": "default",
-          "scene": null
-        },
-        {
-          "name": "",
-          "pathName": "pages/coupon/coupon-list/index",
-          "query": "",
-          "launchMode": "default",
-          "scene": null
-        },
-        {
-          "name": "",
-          "pathName": "pages/goods/comments/create/index",
-          "query": "",
-          "launchMode": "default",
-          "scene": null
-        },
-        {
           "name": "",
           "pathName": "pages/order/after-service-list/index",
           "query": "",
@@ -137,7 +75,21 @@
         },
         {
           "name": "",
-          "pathName": "pages/goods/comments/create/index",
+          "pathName": "pages/order/order-confirm/index",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/order/bindBankCard/index",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/order/bindBankCard/index",
           "query": "",
           "launchMode": "default",
           "scene": null
@@ -151,84 +103,7 @@
         },
         {
           "name": "",
-          "pathName": "pages/goods/list/index",
-          "query": "",
-          "launchMode": "default",
-          "scene": null
-        },
-        {
-          "name": "",
-          "pathName": "pages/usercenter/address/edit/index",
-          "query": "",
-          "launchMode": "default",
-          "scene": null
-        },
-        {
-          "name": "",
-          "pathName": "pages/order/receipt/index",
-          "query": "",
-          "launchMode": "default",
-          "scene": null
-        },
-        {
-          "name": "",
-          "pathName": "pages/goods/result/index",
-          "query": "",
-          "launchMode": "default",
-          "scene": null
-        },
-        {
-          "name": "",
-          "pathName": "pages/order/fill-tracking-no/index",
-          "query": "",
-          "launchMode": "default",
-          "scene": null
-        },
-        {
-          "name": "",
-          "pathName": "pages/order/receipt/index",
-          "query": "",
-          "launchMode": "default",
-          "scene": null
-        },
-        {
-          "name": "",
-          "pathName": "pages/order/fill-tracking-no/index",
-          "query": "",
-          "launchMode": "default",
-          "scene": null
-        },
-        {
-          "name": "",
-          "pathName": "pages/order/order-confirm/index",
-          "query": "",
-          "launchMode": "default",
-          "scene": null
-        },
-        {
-          "name": "",
-          "pathName": "pages/order/receipt/index",
-          "query": "",
-          "launchMode": "default",
-          "scene": null
-        },
-        {
-          "name": "",
-          "pathName": "pages/usercenter/address/edit/index",
-          "query": "",
-          "launchMode": "default",
-          "scene": null
-        },
-        {
-          "name": "",
-          "pathName": "pages/order/fill-tracking-no/index",
-          "query": "",
-          "launchMode": "default",
-          "scene": null
-        },
-        {
-          "name": "",
-          "pathName": "pages/goods/comments/index",
+          "pathName": "pages/order/bindBankCard/index",
           "query": "",
           "launchMode": "default",
           "scene": null
@@ -249,21 +124,7 @@
         },
         {
           "name": "",
-          "pathName": "pages/goods/comments/create/index",
-          "query": "",
-          "launchMode": "default",
-          "scene": null
-        },
-        {
-          "name": "",
           "pathName": "pages/order/order-confirm/index",
-          "query": "",
-          "launchMode": "default",
-          "scene": null
-        },
-        {
-          "name": "",
-          "pathName": "pages/order/receipt/index",
           "query": "",
           "launchMode": "default",
           "scene": null
@@ -278,5 +139,5 @@
       ]
     }
   },
-  "libVersion": "2.32.2"
+  "libVersion": "2.32.3"
 }

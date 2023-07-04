@@ -1,5 +1,5 @@
-import Dialog from 'pages/cart/components/form/node_modules/tdesign-miniprogram/dialog/index';
-import Toast from '../../cart/components/form/index';
+
+
 
 import { dispatchCommitPay } from '../../../services/order/orderConfirm';
 

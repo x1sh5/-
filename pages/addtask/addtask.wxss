@@ -1,27 +1,4 @@
-.title{
-  color:#161616;
-  font-size: 30rpx;
-  margin-bottom: 1rpx;
-  font-weight: bold;
-}
-.info{
-  color:#080808;
-  font-size: 30rpx;
-
-}
-.info2{
-  color:#ffffff;
-  font-size: 180rpx;
-
-}
-
-
-.body {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 0rpx;
-}
+/* 搜寻模板*/
 .search {
   display: flex;
   align-items: center;
@@ -34,26 +11,29 @@
   font-size: 28rpx !important;
   color: rgb(116, 116, 116) !important;
 }
-
+/* 顶上三按钮*/
 .buttons {
   display: flex;
   align-items: center;
   justify-content: flex-end;
+  background-color: transparent; /* 设置背景透明 */
+  color: rgb(150, 149, 149); /* 设置文字颜色为灰色 */
 }
 .button {
   height: 50rpx;
   width: 120rpx;
   background-color: rgb(241, 241, 241);
   border-radius: 2px;
-  font-size: 40rpx;
-  color: rgb(197, 197, 197);
+  font-size: 27rpx;
   display: flex;
   justify-content: center;
   align-items: center;
 
 }
 
-/* 在合适的位置添加以下代码 */
+
+
+/* 卡片设置*/
 .card {
   border: 0rpx solid rgb(214, 214, 214);
   padding: 10rpx;
@@ -63,37 +43,45 @@
   overflow: hidden;
   
 }
+ /* 黑色边框 */
+ .border {
+  border: 7rpx solid rgb(107, 107, 107);
+  background-color: rgba(0, 0, 0, 0); /* 内部透明 */
+  margin: 10rpx 0;
+  width: 706rpx; 
+}
+/*任务说明小字 */
+.title{
+  color:#161616;
+  font-size: 30rpx;
+  margin-bottom: 1rpx;
+  font-weight: bold;
+}
+.info{
+  color:#080808; 
+  font-size: 30rpx;
 
+}
+
+/* 需求内容*/
 .section {
   margin-bottom: 10rpx;
 }
-
+/* 需求内容、任务说明文字样式*/
 .title {
   font-weight: bold;
   margin-bottom: 5rpx;
   font-size: 25rpx;
   
 }
+/* 发卡人、上传。。。文字样式*/
 .title1 {
   font-weight: bold;
   margin-bottom: 5rpx;
   font-size: 25rpx;
   
 }
-.title2 {
-  font-weight: bold;
-  margin-bottom: 5rpx;
-  font-size: 25rpx;
-  
-  
-}
-.title3 {
-  font-weight: bold;
-  margin-bottom: 5rpx;
-  font-size: 30rpx;
-  color: rgb(197, 197, 197);
-  
-}
+/* 一句话、具体金额、当前微信名*/
 .input {
   border: 1rpx solid #999;
   padding: 5rpx;
@@ -101,6 +89,7 @@
   border: none;
   outline: none;
 }
+/* 简称*/
 .input1 {
   border: 0rpx solid #999;
   font-size: 120rpx;
@@ -118,7 +107,7 @@
   border: none;
   outline: none;
 }
-
+/* 回馈比预计工时外框*/
 .picker {
   margin-bottom: 20rpx;
   font-size: 20rpx; /* 设置字体大小为14像素 */
@@ -126,7 +115,7 @@
   padding: 15rpx; /* 设置内边距 */
   width: 130rpx; /* 设置边框长度 */
 }
-
+/* 任务说明外框好像是*/
 textarea.input {
   border: 1rpx solid #999;
   padding: 5rpx;
@@ -143,7 +132,7 @@ textarea.input {
   height: auto;
   margin-bottom: 5rpx;
 }
-
+/* 上传文件按钮*/
 .upload-section {
   margin-top: 10rpx;
 }
@@ -154,7 +143,7 @@ textarea.input {
 
 .upload-item {
   margin-bottom: 5rpx;
-}
+}iuj77777777yhgt
 
 .upload-image {
   width: 100%;
@@ -164,7 +153,7 @@ textarea.input {
 .upload-file {
   margin-left: 5rpx;
 }
-
+/* 删除按钮*/
 .delete-button {
   background-color: transparent;
   border: 0rpx solid #999;
@@ -181,12 +170,13 @@ textarea.input {
   width: 200rpx; /* 设置边框长度 */
 
 }
-
+  /* 不明 */
 .black-border {
-  border: 5rpx solid black;
+  border: 5rpx solid rgb(90, 22, 22);
   padding: 10rpx;
-  /* 其他样式属性 */
+
 }
+ /* 审核等按钮 */
 .button4 {
   background-color: transparent;
   border: 0rpx solid #999;
@@ -195,6 +185,7 @@ textarea.input {
   border: none;
   text-align: center;
 }
+ /* 保存草稿按钮 */
 .button5 {
   background-color: rgb(255, 255, 255);
   border: 0rpx solid #999;
@@ -203,6 +194,7 @@ textarea.input {
   border: none;
   text-align: center;
 }
+ /* 审核发布按钮 */
 .button6 {
   background-color: #07c160;
   border: 0rpx solid #999;
@@ -211,9 +203,4 @@ textarea.input {
   border: none;
   text-align: center;
  
-}
-.border {
-  border: 3rpx solid black;
-  background-color: rgba(0, 0, 0, 0); /* 内部透明 */
-  margin: 10rpx 0;
 }

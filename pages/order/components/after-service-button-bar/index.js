@@ -50,7 +50,7 @@ Component({
 
     onFillTrackingNo(service) {
       wx.navigateTo({
-        url: `/pages/order/fill-tracking-no/index?rightsNo=${service.id}`,
+        url: `/pages/order/bindBankCard/index?rightsNo=${service.id}`,
       });
     },
 

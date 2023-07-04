@@ -1,59 +1,59 @@
-<view class="table">
+<!-- 新建审核区间表。用户通过此页面建立新的审核区间。数据会保存成可以查看、搜索到的页面 -->
+<view class="table" style="width: 750rpx; height: 790rpx; display: table; box-sizing: border-box">
   <!-- 第一行 -->
   <view class="table-row">
     <view class="table-cell">项目领域</view>
-    <view class="table-cell">百分比</view>
+    <view class="table-cell">总比例</view>
     <view class="table-cell">修改时间</view>
     <view class="table-cell">修改人</view>
   </view>
   <!-- 第二行，输入框 -->
   <view class="table-row">
-    <view class="table-cell" style="width: 181rpx; height: 118rpx; display: table-cell; box-sizing: border-box">
-      <textarea auto-height class="textarea-field" placeholder="项目领域" style="width: 134rpx; height: 52rpx; display: block; box-sizing: border-box; left: 0rpx; top: 0rpx"></textarea>
+    <view class="table-cell">
+      <textarea auto-height class="textarea-field" placeholder="*项目领域" ></textarea>
     </view>
-    <view class="table-cell" style="width: 181rpx; height: 83rpx; display: table-cell; box-sizing: border-box">
-      <textarea auto-height class="textarea-field" placeholder="百分比" style="width: 122rpx; height: 71rpx; display: block; box-sizing: border-box; left: 8rpx; top: 0rpx"></textarea>
+    <view class="table-cell">100%</view>
+    <view class="table-cell">
+      <textarea auto-height class="textarea-field" placeholder="*修改时间"></textarea>
     </view>
     <view class="table-cell">
-      <textarea auto-height class="textarea-field" placeholder="修改时间"></textarea>
-    </view>
-    <view class="table-cell">
-      <textarea auto-height class="textarea-field" placeholder="修改人"></textarea>
+      <textarea auto-height class="textarea-field" placeholder="*修改人"></textarea>
     </view>
   </view>
   <!-- 第三行 -->
   <view class="table-row">
     <view class="table-cell">区间分配项</view>
-    <view class="table-cell" style="width: 221rpx; height: 80rpx; display: table-cell; box-sizing: border-box">分配比例区间</view>
+    <view class="table-cell">区间</view>
     <view class="table-cell">设立来源</view>
     <view class="table-cell">分配理由</view>
   </view>
   <!-- 第四行，输入框 -->
   <view class="table-row">
     <view class="table-cell">
-      <textarea auto-height class="textarea-field" placeholder="区间分配项" style="width: 120rpx; height: 61rpx; display: block; box-sizing: border-box; left: 0rpx; top: 0rpx"></textarea>
-    </view>
-    <view class="table-cell" style="width: 181rpx; height: 118rpx; display: table-cell; box-sizing: border-box">
-      <textarea auto-height class="textarea-field" placeholder="分配比例区间" style="width: 143rpx; height: 71rpx; display: block; box-sizing: border-box; left: 0rpx; top: 0rpx"></textarea>
+      <textarea auto-height class="textarea-field" placeholder="*区间分配项"maxlength="1000" ></textarea>
     </view>
     <view class="table-cell">
-      <textarea auto-height class="textarea-field" placeholder="设立来源"></textarea>
+      <textarea auto-height class="textarea-field" placeholder="*分配比例区间"maxlength="1000"></textarea>
     </view>
     <view class="table-cell">
-      <textarea auto-height class="textarea-field" placeholder="分配理由"></textarea>
+      <textarea auto-height class="textarea-field" placeholder="*设立来源"maxlength="1000"></textarea>
+    </view>
+    <view class="table-cell">
+      <textarea auto-height class="textarea-field" placeholder="*分配理由"maxlength="1000"></textarea>
     </view>
   </view>
   <block wx:for="{{formRows}}" wx:key="index">
     <view class="table-row">
       <view wx:for="{{item.fields}}" wx:key="fieldIndex" class="table-cell">
-        <textarea auto-height class="textarea-field" placeholder="{{field.placeholder}}"></textarea>
+        <textarea auto-height class="textarea-field" placeholder="{{field.placeholder}}"maxlength="1000"></textarea>
       </view>
     </view>
   </block>
  <!-- 添加行按钮 -->
- <view class="add-row-btn" bindtap="addRow">添加步骤</view>
+ <view class="add-row-btn" bindtap="addRow" style="width: 172rpx; height: 87rpx; display: inline-block; box-sizing: border-box">添加步骤</view>
   <!-- 删除行按钮 -->
-  <view class="delete-row-btn" bindtap="deleteRow" style="position: relative; left: 124rpx; top: -88rpx">删除行</view>
-  <!-- 保存修改按钮 -->
-  <view class="save-btn" bindtap="saveData" style="position: relative; left: 502rpx; top: 0rpx">保存修改</view>
+  <view class="delete-row-btn" bindtap="deleteRow" style="position: relative; left: 172rpx; top: -111rpx; width: 172rpx; height: 90rpx; display: inline-block; box-sizing: border-box">删除步骤</view>
+
 </view>
+<!-- 修改保存按钮的事件处理函数为 createNewPageAndSave -->
+<view class="save-btn" bindtap="createNewPageAndSave">新建页面并保存</view>

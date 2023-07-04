@@ -34,12 +34,8 @@ Page({
       wx.navigateTo({
         url: `/pages/order/order-list/index?orderNo=${orderNo}`,
       });
-    } else if (target === 'order') {
-      wx.navigateTo({
-        url: `/pages/order/order-detail/index?orderNo=${orderNo}`,
-      });
-    }
-  },
+  }
+},
 
   navBackHandle() {
     wx.navigateBack();

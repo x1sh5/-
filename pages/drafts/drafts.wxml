@@ -1,3 +1,4 @@
+  <!-- 草稿箱界面，暂时未设置成功。需要用户将任务发布表单的填写内容状态能保留在此页面，点进草稿箱后会继续编辑表单。个人页面上的草稿箱按钮转到此页面即可-->
 <view>
   <view wx:for="{{draftDataStorage}}" wx:key="index">
     <text class="card-title">{{item.title}}</text>

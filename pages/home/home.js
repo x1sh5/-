@@ -80,12 +80,7 @@ Page({
     }
   },
 
-  handleRegisterClick() {
-    // 用户点击了“去注册”按钮，跳转到注册页面
-    wx.navigateTo({
-      url: '/pages/register/register',
-    });
-  },
+
 
   handleCloseClick() {
     // 关闭弹窗

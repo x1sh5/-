@@ -1,10 +1,11 @@
+<!-- 搜索界面 -->
 <view class="search-page">
   <t-search
     t-class-input-container="t-class__input-container"
     t-class-input="t-search__input"
     value="{{searchValue}}"
     leftIcon=""
-    placeholder="iPhone12pro"
+    placeholder="广东发餐审核区间"
     bind:submit="handleSubmit"
     focus
   >

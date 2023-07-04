@@ -1,0 +1,12 @@
+<!--pages/talk/talk.wxml-->
+<view>
+  <text>pages/talk/talk.wxml</text>
+  <view wx:for="{{socketMsgQueue}}">
+    <view><text>{{item.content}}</text></view>
+  </view>
+<form class="bottom-input" bindsubmit="sendMessage">
+      <input value="{{inputmsag}}" name="mssg" style="width: 100%;border: 2px;border-color: gray;border-style: solid;"/>
+      <button form-type="submit" style="background-color: #07c160;">发送</button>
+    </form>
+</view>
+

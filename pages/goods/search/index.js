@@ -98,22 +98,6 @@ Page({
     });
   },
 
-  handleHistoryTap(e) {
-    const { historyWords } = this.data;
-    const { dataset } = e.currentTarget;
-    const _searchValue = historyWords[dataset.index || 0] || '';
-    if (_searchValue) {
-      wx.navigateTo({
-        url: `/pages/goods/result/index?searchValue=${_searchValue}`,
-      });
-    }
-  },
 
-  handleSubmit(e) {
-    const { value } = e.detail.value;
-    if (value.length === 0) return;
-    wx.navigateTo({
-      url: `/pages/goods/result/index?searchValue=${value}`,
-    });
-  },
+
 });

@@ -1,0 +1,29 @@
+ <!-- pages/order/bindBankCard/index 银行卡绑定界面 -->
+
+ <view class="bank-card-binding">
+  <view class="notice-bar">请填写正确的银行卡信息，以便接收款项</view>
+  <view class="bank-card-binding__form">
+    <t-cell-group>
+      <t-cell title="银行卡号" t-class-title="t-cell-title-width">
+        <t-input
+          slot="note"
+          borderless
+          t-class="t-cell__value"
+          type="number"
+          value="{{bankCardNumber}}"
+          maxlength="19"
+          placeholder="请输入银行卡号"
+          bind:change="onInput"
+          data-key="bankCardNumber"
+        />
+      </t-cell>
+    </t-cell-group>
+  </view>
+  <view class="bank-card-binding__button-bar" style="width: 225rpx; height: 83rpx; display: block; box-sizing: border-box; position: relative; left: 303rpx; top: 83rpx">
+    <t-button t-class="btn {{ submitActived ? 'confirmBtn' : 'disabled' }}" loading="{{submitting}}" bindtap="onSubmit">
+      保存
+    </t-button>
+  </view>
+</view>
+<t-toast id="t-toast" />
+<t-dialog id="t-dialog" />

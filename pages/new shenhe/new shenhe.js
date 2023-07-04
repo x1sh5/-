@@ -43,8 +43,22 @@ Page({
     }
   },
 
-  saveData() {
-    // 保存用户输入的数据并跳转到 pages/shenhe 页面
-    wx.navigateTo({ url: "/pages/shenhe/shenhe" });
+  createNewPageAndSave() {
+    // 保存用户输入的数据到本地存储
+    wx.setStorage({
+      key: 'inputData',
+      data: this.data.formRows,
+      success: () => {
+        // 跳转到新页面
+        wx.navigateTo({ url: "/pages/shenhe/shenhe" });
+      },
+      fail: () => {
+        wx.showToast({
+          title: '保存数据失败',
+          icon: 'none',
+          duration: 2000,
+        });
+      },
+    });
   },
 });

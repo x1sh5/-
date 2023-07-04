@@ -2,7 +2,12 @@ const app = getApp();
 
 Page({
   data: {
-    cards: [],
+    cards: [
+      { id: '1'},
+      
+    ],
+    submittedTaskData: [],
+    nextId: 1,
     name: '',
     description: '',
     task: {
@@ -16,20 +21,87 @@ Page({
     },
     // 其他数据如feedbackRatioRange，timeRange等
   },
-  addZhizuo: function() {
-    // 添加一个新的 zhizuo 组件
-    const newZhizuoCards = this.data.task.zhizuoCards.concat(1);
+
+
+  addtaskcard: function () {
+    // 添加一个新的 AuditCard 组件，并分配一个唯一的编号
+    const newCard = {
+      id: `ORDER${this.data.nextId.toString().padStart(6, "0")}`,
+      type: 'taskcard',
+      data: {
+        // 设置默认的 taskcard 数据
+        
+        // 其他默认属性...
+      },
+    };
+    const newCards = this.data.cards.concat(newCard);
     this.setData({
-      'task.zhizuoCards': newZhizuoCards
+      cards: newCards,
+      nextId: this.data.nextId + 1, // 递增 nextId，以便下一个组件具有唯一的编号
     });
   },
+ // 在这里实现添加新卡片的逻辑
   addCard: function() {
-    // 添加一个新的卡片组件
-    const newCards = this.data.cards.concat(1);
+    // 添加一个新的卡片组件，并分配一个唯一的编号
+    const newCard = {
+      id: `ORDER${this.data.nextId.toString().padStart(6, "0")}`,
+      type: 'card'
+    };
+    const newtaskcard = this.data.taskcard.concat(newCard);
     this.setData({
-      cards: newCards
+      taskcard: newtaskcard,
+      nextId: this.data.nextId + 1 // 递增 nextId，以便下一个组件具有唯一的编号
     });
   },
+
+  deleteTaskCard: function (e) {
+    const id = e.detail.id;
+    const index = this.data.cards.findIndex(item => item.id === id);
+  
+    if (index !== -1) {
+      let cards = this.data.cards;
+      cards.splice(index, 1);
+      this.setData({ cards });
+    }
+  },
+
+  deleteCard() {
+    // 处理删除卡片的逻辑，可以使用页面数据的方式删除对应的卡片数据
+    // 例如，从卡片列表中移除当前卡片
+    const cardList = this.data.cardList;
+    const index = cardList.indexOf(this.data.currentCard);
+    if (index > -1) {
+      cardList.splice(index, 1);
+      this.setData({ cardList });
+    }
+  },
+
+  handleTaskcardSubmit: function (e) {
+    const taskData = e.detail;
+    this.setData({
+      submittedTaskData: [...this.data.submittedTaskData, taskData],
+    });
+  },
+
+ // 为每个任务设置卡片编号和统一的组号
+  publishTasks: function () {
+    const { submittedTaskData } = this.data;
+
+    submittedTaskData.forEach((taskData, index) => {
+      // 为每个任务设置卡片编号和统一的组号
+      taskData.cardId = index + 1;
+      taskData.groupId = 1;
+
+      // 在这里，你可以为每个任务创建一个单独的页面
+      // 由于没有接入后端服务器，暂时只将任务数据打印到控制台
+      console.log("创建任务页面:", taskData);
+    });
+
+    // 重置 submittedTaskData
+    this.setData({ submittedTaskData: [] });
+  },
+
+
   submit: function (e) {
     const taskData = e.detail.value;
     wx.request({
@@ -72,6 +144,10 @@ Page({
     });
   },
   handleSubmit(e) {
+    const formData = e.detail;
+    // 将 formData 保存到全局变量中
+    getApp().globalData.taskData = formData;
+    // 导航到 goods/details 页面
     // 将数据传递给商品详情页面
     wx.navigateTo({
       url: `/pages/goods/details/index?name=${this.data.name}&description=${this.data.description}`,
@@ -83,6 +159,25 @@ Page({
     });
   },
 
+  feedbackRatioChange(e) {
+    const newIndex = parseInt(e.detail.value, 10);
+    this.setData(
+      {
+        feedbackRatioIndex: newIndex
+      },
+      () => {
+        if (this.data.feedbackRatioRange.length === 1 && this.data.feedbackRatioRange[0] === 100) {
+          this.setData({
+            showInput: true
+          });
+        } else {
+          this.setData({
+            showInput: false
+          });
+        }
+      }
+    );
+  },
   saveDraft: function () {
     // 在这里实现保存草稿的逻辑
     // 假设已经将草稿数据存储在了 this.data.cards 中
@@ -110,16 +205,7 @@ Page({
     });
   },
 
-  deleteCard() {
-    // 处理删除卡片的逻辑，可以使用页面数据的方式删除对应的卡片数据
-    // 例如，从卡片列表中移除当前卡片
-    const cardList = this.data.cardList;
-    const index = cardList.indexOf(this.data.currentCard);
-    if (index > -1) {
-      cardList.splice(index, 1);
-      this.setData({ cardList });
-    }
-  },
+
   button1Click() {
     wx.navigateTo({
       url: '/pages/order/order-list/index',
@@ -142,7 +228,7 @@ Page({
   },
   button4Click() {
     wx.navigateTo({
-      url: 'pages/renwu/zhizuo/zhizuo',
+      url: "/components/taskcard/taskcard",
     });
   },
   button5Click() {
@@ -398,9 +484,6 @@ Page({
     });
   },
  // 添加一个点击事件处理函数
- addCard: function () {
-  // 在这里实现添加新卡片的逻辑
-},
 
 
   // 监听回馈比选择器变化
@@ -415,6 +498,16 @@ Page({
       feedbackRatioIndex: selectedRatioIndex,
     });
   },
+  handleDeleteCard: function (e) {
+    const id = e.detail.id;
+    const cards = this.data.cards.filter((card) => card.id !== id);
+    this.setData({
+      cards: cards
+    });
+  },
+
+
+
   addAudit: function () {
     // 在这里实现添加审核卡片的逻辑
     this.setData({
@@ -445,6 +538,35 @@ Page({
   addProduction: function () {
     // 在这里实现添加制作卡片的逻辑
   },
+
+// 处理表单提交事件
+  submitData: function (e) {
+    const data = {
+      title: e.detail.value.title,
+      description: e.detail.value.description,
+    };
+
+    this.uploadData(data);
+  },
+
+  uploadData: function (data) {
+    const url = 'https://www.wangyan.net/api/Assignment'; 
+
+    wx.request({
+      url: url,
+      method: 'POST',
+      data: data,
+      success: (res) => {
+        console.log('数据上传成功：', res.data);
+        // 您可以在这里处理上传成功的情况，例如显示成功提示或更新页面数据
+      },
+      fail: (error) => {
+        console.error('数据上传失败：', error);
+        // 您可以在这里处理上传失败的情况，例如显示错误提示
+      },
+    });
+  },
+
 })
 
 

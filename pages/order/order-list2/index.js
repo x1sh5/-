@@ -225,12 +225,5 @@ Page({
     this.refreshList(this.data.curTab);
   },
 
-  onOrderCardTap(e) {
-    const {
-      order
-    } = e.currentTarget.dataset;
-    wx.navigateTo({
-      url: `/pages/order/order-detail/index?orderNo=${order.orderNo}`,
-    });
-  },
+
 });

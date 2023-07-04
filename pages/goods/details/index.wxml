@@ -1,86 +1,27 @@
-<view class="goods-detail-page">
-  <view class="goods-head">
-    <t-swiper
-      wx:if="{{details.images.length > 0}}"
-      height="400rpx"
-      current="{{current}}"
-      autoplay="{{autoplay}}"
-      duration="{{duration}}"
-      interval="{{interval}}"
-      navigation="{{navigation}}"
-      list="{{details.images}}"
-    ></t-swiper>   
- <view class="goods-intro">{{intro}}</view>
-    </view>
-    
-    <view class="desc-content" style="width: 750rpx; height: 755rpx; display: block; box-sizing: border-box">
-    <view class="desc-content__title" wx:if="{{details.desc.length > 0}}">
-      <t-image t-class="img" src="{{recLeftImg}}" />
-      <span class="desc-content__title--text">制作说明</span>
-      <t-image t-class="img" src="{{recRightImg}}" />
-      
-      <view class="desc-content">
-  <view class="product-name">{{name}}</view>
-  <view class="product-description">{{description}}</view>
-</view>
-    </view>
+<!--pages/goods/details/index.wxml-->
+<t-demo title="02 组件示例" desc="应用示例" padding>
+    <with-title />
+    <custom-close style="display: block; margin-top: 32rpx" />
+  </t-demo>
+<view class='list' style="width: 711rpx; height: 394rpx; display: block; box-sizing: border-box">
+ <view class='list-img' style="width: 427rpx; height: 265rpx; display: block; box-sizing: border-box; position: relative; left: 298rpx; top: 10rpx">
+   <image src='../../images/001.png' style="width: 765rpx; height: 368rpx; display: inline-block; box-sizing: border-box; position: relative; left: -317rpx; top: 0rpx"></image>
+   </view>
+<view class='list-info' style="width: 694rpx; height: 385rpx; display: block; box-sizing: border-box; position: relative; left: 17rpx; top: -256rpx">
+   <view class='title' style="width: 150rpx; height: 38rpx; display: block; box-sizing: border-box">需求内容</view>
+   <view class='info' style="width: 312rpx; height: 118rpx; display: block; box-sizing: border-box; left: 0rpx; top: 0rpx">一句话概括内容公司架构细则,文档撰写</view>
+   <view class='info2' style="width: 378rpx; height: 225rpx; display: block; box-sizing: border-box; left: 333rpx; top: -169rpx; position: relative">简称</view>
+   <view class='title' style="width: 150rpx; height: 50rpx; display: block; box-sizing: border-box; position: relative; left: 275rpx; top: -90rpx">发起人</view>
+   <view class='info' style="width: 118rpx; height: 38rpx; display: block; box-sizing: border-box; position: relative; left: 275rpx; top: -113rpx">20h</view>
+   <view class='title' style="width: 150rpx; height: 38rpx; display: block; box-sizing: border-box; position: relative; left: 0rpx; top: -286rpx">预计工时</view>
+   <view class="info" style="width: 118rpx; height: 38rpx; display: block; box-sizing: border-box; position: relative; left: 0rpx; top: -289rpx">{{taskData.estimatedHours}}h</view>
+   <view class='title' style="position: relative; left: 156rpx; top: -376rpx; width: 118rpx; height: 50rpx; display: block; box-sizing: border-box">回馈比</view>
+   <view class='info' style="width: 150rpx; height: 50rpx; display: block; box-sizing: border-box; position: relative; left: 162rpx; top: -390rpx">20h</view>
 
   </view>
-
-  <view class="goods-bottom-operation">
-    <buy-bar
-      jumpArray="{{jumpArray}}"
-      soldout="{{soldout}}"
-      isStock="{{isStock}}"
-      shopCartNum="{{cartNum}}"
-      
-      buttonType="{{buttonType}}"
-      bind:toAddCart="toAddCart"
-      bind:toNav="toNav"
-      bind:toBuyNow="buyItNow"
-      class="goods-details-card"
-    />
-  </view>
-
-  <goods-specs-popup
-    id="goodsSpecsPopup"
-    show="{{isSpuSelectPopupShow}}"
-    title="{{details.title || ''}}"
-    src="{{specImg ? specImg : primaryImage}}"
-    specList="{{details.specList || []}}"
-    skuList="{{skuArray}}"
-    limitBuyInfo="{{details.limitInfo[0].text || ''}}"
-    bind:closeSpecsPopup="handlePopupHide"
-    bind:change="chooseSpecItem"
-    bind:changeNum="changeNum"
-    bind:addCart="addCart"
-    bind:buyNow="gotoBuy"
-    bind:specsConfirm="specsConfirm"
-    isStock="{{isStock}}"
-    outOperateStatus="{{outOperateStatus}}"
-  >
-    <view slot="goods-price">
-      <view class="popup-sku__price">
-        <price
-          wx:if="{{!isAllSelectedSku || (!promotionSubCode && isAllSelectedSku)}}"
-          price="{{selectSkuSellsPrice ? selectSkuSellsPrice : minSalePrice }}"
-          wr-class="popup-sku__price-num"
-          symbol-class="popup-sku__price-symbol"
-        />
-        <price
-          wx:if="{{selectSkuSellsPrice === 0 && minSalePrice !== maxSalePrice && !isAllSelectedSku}}"
-          price="{{maxSalePrice}}"
-          wr-class="popup-sku__price-del"
-          type="delthrough"
-        />
-      </view>
-    </view>
-  </goods-specs-popup>
-  <promotion-popup
-    list="{{list}}"
-    bind:closePromotionPopup="closePromotionPopup"
-    show="{{isShowPromotionPop}}"
-    bind:promotionChange="promotionChange"
-  />
 </view>
-<t-toast id="t-toast" />
+
+
+<text>制作说明</text>
+<text>{{taskData.taskDescription}}</text>
+

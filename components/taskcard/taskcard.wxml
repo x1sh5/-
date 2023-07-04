@@ -1,18 +1,92 @@
+
 <!--components/taskcard/taskcard.wxml-->
- <!-- 任务修改，增加 -->
-<view class="card" style="width: 680rpx; height: 1222rpx; display: block; box-sizing: border-box">
-  <view class="body">
-    <view class="border" style="width: 619rpx; height: 458rpx; display: block; box-sizing: border-box">
-    <form bindsubmit="submit" style="width: 582rpx; height: 521rpx; display: block; box-sizing: border-box">
-      <cardinfo editable="{{true}}" />
+ <!-- 卡片总体 -->
+ <view class="card" style="width: 680rpx; height: 1533rpx; display: block; box-sizing: border-box; position: relative; left: -5rpx; top: -15rpx">
+  <!-- 透明黑框-->
+  <view class="body" style="width: 596rpx; height: 436rpx; display: flex; box-sizing: border-box; position: relative; left: 32rpx; top: 26rpx">
+   <!-- 需求内容-->
+    <view class="border" style="width: 596rpx; height: 340rpx; display: block; box-sizing: border-box; position: relative; left: 0rpx; top: 36rpx">
+    <form bindsubmit="submit" style="width: 608rpx; height: 1316rpx; display: block; box-sizing: border-box; position: relative; left: 6rpx; top: -6rpx">
+      <view class="section" style="width: 570rpx; height: 122rpx; display: block; box-sizing: border-box">
+        <view class="title" style="width: 296rpx; height: 40rpx; display: block; box-sizing: border-box">需求内容：</view>
+        <input style="width: 338rpx; height: 120rpx; display: block; box-sizing: border-box; left: 0rpx; top: 0rpx" class="input" name="code" placeholder="*一句话简述任务内容" />
+         <!-- 简称-->
+        <input style="width: 244rpx; height: 183rpx; display: block; box-sizing: border-box; left: 326rpx; top: -179rpx; position: relative" class="input1" name="code" placeholder="简称" />
+      </view>
+ <!-- 回馈比函数。在当前页面只有一个回馈比选项时：回馈比选择范围为100%并出现一个填写具体金额的输入框。在当前页面出现多个回馈比选项时：选择范围累计增加至100%-->
+ <view class="section">
+  <view class="row" style="position: relative; left: 0rpx; top: 73rpx">
+    <picker
+  bindchange="feedbackRatioChange"
+  value="{{feedbackRatioIndex}}"
+  range="{{feedbackRatioRange}}"
+  class="input-small"
+  name="feedbackRatio"
+>
+  <view class="picker" style="position: relative; left: 293rpx; top: 0rpx; width: 233rpx; height: 33rpx; display: block; box-sizing: border-box">
+    回馈比: {{feedbackRatioRange[feedbackRatioIndex]}}
+  </view>
+</picker>
+    <view wx:if="{{feedbackRatioRange.length === 1 && feedbackRatioRange[0] === '100%'}}">
+      <view wx:if="{{showInput}}" class="row">
+        <input
+          bindinput="inputRatio"
+          value="{{feedbackRatio}}"
+          class="input-small"
+          name="customFeedbackRatio"
+          placeholder="具体金额"
+        />
+      </view>
+    </view>
+
+
+           <!-- 预计工时-->
+ <picker
+  bindchange="timeChange"
+  value="{{time}}"
+  mode="multiSelector"
+  range="{{timeRange}}"
+  class="input-small"
+  name="time"
+  style="width: 247rpx; height: 43rpx; display: block; box-sizing: border-box; position: relative; left: 24rpx; top: -43rpx"
+>
+  <view
+    class="picker"
+    style="width: 279rpx; height: 50rpx; display: block; box-sizing: border-box; position: relative; left: -15rpx; top: 0rpx"
+  >预计工时: {{timeRange[0][time[0]]}}天 {{timeRange[1][time[1]]}}时 {{timeRange[2][time[2]]}}分</view>
+</picker>
+        </view>
+         <!-- 卡片类型选择-->
+        <view class="section" style="width: 254rpx; height: 74rpx; display: block; box-sizing: border-box"> 
+            <picker bindchange="dateChange" fields="year" value="{{date}}" mode="date" class="input" name="date" style="width: 261rpx; height: 54rpx; display: block; box-sizing: border-box; position: relative; left: -3rpx; top: 73rpx">
+                <view class="picker2" style="width: 242rpx; height: 64rpx; display: block; box-sizing: border-box; position: relative; left: 3rpx; top: -31rpx">审核卡 {{date}}</view>
+            </picker>
+        </view>
+      </view>
+       <!-- 发卡人-->
+      <view class="section" style="width: 209rpx; height: 122rpx; display: block; box-sizing: border-box; position: relative; left: 390rpx; top: -329rpx">
+        <view class="title1" style="width: 97rpx; height: 52rpx; display: block; box-sizing: border-box; position: relative; left: -101rpx; top: 294rpx">发卡人：</view>
+        <input style="width: 160rpx; height: 17rpx; display: block; box-sizing: border-box; position: relative; font-size: 25rpx; left: -101rpx; top: 263rpx" type="nickname" name="nickname" placeholder="当前微信名" />
+      </view>
+      
+      ---------------------------------- <!-- 分割线-->
+       <!-- 任务说明-->
       <view class="image-list">
         <view wx:for="{{imageList}}" wx:key="index">
           <image src="{{item}}" mode="aspectFit" />
         </view>
       </view>
-      <view class="section" style="width: 150rpx; height: 195rpx; display: block; box-sizing: border-box; position: relative; left: 490rpx; top: -249rpx">
-        <view class="title1" style="width: 293rpx; height: 31rpx; display: block; box-sizing: border-box; position: relative; left: -322rpx; top: 67rpx">上传任务说明图片或文件：</view>
-        <view class="upload-section" style="width: 143rpx; height: 108rpx; display: block; box-sizing: border-box; position: relative; left: -29rpx; top: -43rpx">
+      <!-- 任务说明-->
+      <view class="section" style="position: relative; left: 0rpx; top: -96rpx">
+        <view class="title" style="position: relative; left: 0rpx; top: 26rpx">任务说明：</view>
+        <label for="info" class="input" style="position: relative; left: 0rpx; top: 52rpx">
+          <textarea id="info" name="info" placeholder="*要求任务需求、制作方法明确，步骤条理清晰。验收核对皆以任务说明与后续沟通为准。" maxlength="10000" style="width: 570rpx; height: 828rpx; display: block; box-sizing: border-box; left: 0rpx; top: -26rpx; position: relative"></textarea>
+        </label>
+      </view>
+         <!-- 上传任务说明图片或文件-->
+      <view class="section" style="width: 150rpx; height: 195rpx; display: block; box-sizing: border-box; position: relative; left: 460rpx; top: -134rpx">
+        <view class="title1" style="width: 394rpx; height: 60rpx; display: block; box-sizing: border-box; position: relative; left: -460rpx; top: 136rpx">上传任务说明图片或文件：</view>
+        <view class="upload-section" style="width: 143rpx; height: 108rpx; display: block; box-sizing: border-box; position: relative; left: 8rpx; top: -11rpx">
           <view class="upload-list">
             <block wx:if="{{ isChoosingImage }}">
               <view class="upload-item" wx:for="{{ imageList }}" wx:key="index">
@@ -28,9 +102,24 @@
           <button class="upload-button" bindtap="chooseFile" style="width: 118rpx; height: 108rpx; display: block; box-sizing: border-box; left: 13rpx; top: 0rpx; position: relative">+ </button>
         </view>
       </view>
-      <button class="delete-button" bindtap="deleteCard" style="position: absolute; left: 622rpx; top: 129rpx; width: 59rpx; height: 59rpx; display: block; box-sizing: border-box">X</button>
+      
+      <!-- 删除按钮 -->
+      <button class="delete-btn" bindtap="deleteCard" data-index="{{index}}" >X</button>
+      <view class="card" style="width: 570rpx; height: 0rpx; display: block; box-sizing: border-box; left: -40rpx; top: -1243rpx; position: relative">
+
+       <!-- 传递属性 -->
+  <text>{{taskData.title}}</text>
+  <text>{{taskData.content}}</text>
+
+</view>
       
     </form>
   </view>
 </view>
+</view>
+
+ <!-- 给组件传入数据 -->
+<view class="taskcard">
+  <text>{{data.title}}</text>
+  <text>{{data.content}}</text>
 </view>

@@ -1,3 +1,4 @@
+ <!-- 页面布局暂未确定，下面代码待修改。需根据注册流程和身份信息、资金渠道确定最终的排版 -->
 <view class="person-info">
   <t-cell-group>
     <t-cell

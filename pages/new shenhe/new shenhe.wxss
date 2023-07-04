@@ -1,3 +1,4 @@
+
 .table {
   display: table;
   width: 100%;
@@ -9,9 +10,8 @@
 
 .table-cell {
   display: table-cell;
-  width: 25%;
-  padding: 10px;
-  border: 1px solid #ccc;
+  padding: 1px;
+  border: 0px solid rgb(138, 137, 137);
   font-size: 10px;
 }
 
@@ -22,39 +22,59 @@
   resize: none;
   border: none;
   outline: none;
-  background-color: #f8f8f8;
+  background-color: #e0e0e0;
 }
 
-.add-row-btn {
-  display: inline-block;
-  padding: 10px;
-  margin-top: 10px;
-  background-color: #1aad19;
-  color: #ffffff;
-  font-size: 10px;
-  text-align: center;
-  cursor: pointer;
+/* 修改第二行输入框高度 */
+.table-row:nth-child(2) .textarea-field {
+  min-height: 15px;
+  max-height: 100px;
 }
 
+/* 修改第四行输入框高度 */
+.table-row:nth-child(4) .textarea-field {
+  min-height: 60px;
+  max-height: 400px;
+}
+
+/* 修改左起前两列单元格宽度 */
+.table-cell:nth-child(1),
+.table-cell:nth-child(2) {
+  width: 12.5%;
+}
+
+/* 自适应调整剩下两列宽度 */
+.table-cell:nth-child(3),
+.table-cell:nth-child(4) {
+  width: 37.5%;
+}
+
+/* 缩减第一行和第三行高度 */
+.table-row:nth-child(1) .table-cell,
+.table-row:nth-child(3) .table-cell {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.add-row-btn,
 .delete-row-btn {
   display: inline-block;
   padding: 10px;
   margin-top: 10px;
-  margin-left: 10px;
-  background-color: #adadad;
-  color: #ffffff;
+  background-color: transparent;
+  color: #312b2b;
   font-size: 10px;
   text-align: center;
   cursor: pointer;
 }
 
 .save-btn {
-  display: inline-block;
+  display: block;
+  margin: 10px auto;
   padding: 10px;
-  margin-top: 10px;
-  background-color: #1a1a1a;
-  color: #ffffff;
-  font-size: 14px;
+  background-color: #07c160;
+  border: 0rpx solid #999;
+  color: rgb(255, 255, 255);
+  font-size: 37rpx;
   text-align: center;
-  cursor: pointer;
 }

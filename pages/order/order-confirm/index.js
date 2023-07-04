@@ -1,4 +1,4 @@
-import Toast from '../../cart/components/form/index';
+
 import { fetchSettleDetail } from '../../../services/order/orderConfirm';
 import { commitPay, wechatPayOrder } from './pay';
 import { getAddressPromise } from '../../usercenter/address/list/util';
@@ -80,13 +80,7 @@ Page({
     if (options.userAddressReq) {
       userAddressReq = options.userAddressReq;
     }
-    if (options.type === 'cart') {
-      // 从购物车跳转过来时，获取传入的商品列表数据
-      const goodsRequestListJson = wx.getStorageSync('order.goodsRequestList');
-      goodsRequestList = JSON.parse(goodsRequestListJson);
-    } else if (typeof options.goodsRequestList === 'string') {
-      goodsRequestList = JSON.parse(options.goodsRequestList);
-    }
+    
     //获取结算页请求数据列表
     const storeMap = {};
     goodsRequestList.forEach((goods) => {
@@ -272,9 +266,7 @@ Page({
       id = `&id=${userAddressReq.id}`;
     }
 
-    wx.navigateTo({
-      url: `/pages/usercenter/address/list/index?selectMode=1&isOrderSure=1${id}`,
-    });
+
   },
   onNotes(e) {
     const { storenoteindex: storeNoteIndex } = e.currentTarget.dataset;
@@ -496,15 +488,7 @@ Page({
       'settleDetailData.abnormalDeliveryGoodsList': [],
     });
   },
-  onReceipt() {
-    // 跳转 开发票
-    const invoiceData = this.invoiceData || {};
-    wx.navigateTo({
-      url: `/pages/order/receipt/index?invoiceData=${JSON.stringify(
-        invoiceData,
-      )}`,
-    });
-  },
+
 
   onCoupons(e) {
     const { submitCouponList, currentStoreId } = this.data;

@@ -27,7 +27,7 @@
 
 ### 2. 项目构成
 
-零售行业模版小程序采用基础的 JavaScript + WXSS + ESLint 进行构建，降低了使用门槛。
+小程序采用基础的 JavaScript + WXSS + ESLint 进行构建
 
 项目目录结构如下：
 
@@ -37,21 +37,42 @@
     |-- app.js
     |-- app.json
     |-- app.wxss
+    |-- common	//	通用的
     |-- components	//	公共组件库
     |-- config	//	基础配置
-    |-- custom-tab-bar	//	自定义 tabbar
+    |-- custom-tab-bar	//	主页下标导航栏
+    |-- images	//	引用图片
+    |-- miniprogram_npm	//	小程序 NPM
     |-- model	//	mock 数据
   |-- pages
-    |   |-- cart  //  购物车相关页面x
-    |   |-- coupon  //  优惠券相关页面x
-    |   |-- goods //  任务卡界面√ 
+    |   |-- addtask  //  发布任务表单填写界面
+    |   |-- drafts  //  草稿箱界面 ---通用（发布任务表单可保存到这，未设置成功）
+    |   |-- goods // 单独组件页面
+           |-- details // 通用任务卡内部界面（代码已删除。可重编）
+           |-- search //弹出的搜索界面√
+    |   |-- h-renwu  // 在首页展示的任务卡标题样式组件（待修改）
     |   |-- home  //  首页√
-    |   |-- foor //  发卡界面---√
-    |   |-- usercenter //  个人中心---√
-    |   |-- shenhe //  审核界面---√
-    |   |-- drafts  //  草稿箱界面 ---通用
-    |   |-- order //  订单售后相关页面x
-    |   |-- promotion-detail  //  营销活动页面x
+    |   |-- new shenhe //  新建审核区间表√
+    |   |-- order //  个人中心链接相关页面
+              |--after-service-detail // 详情页面 （仅借鉴代码，可删除，也许有用，待判断）
+              |--after-service-list //  订单列表（仅借鉴代码，可删除，）
+              |--apply-service //  退货页面（仅借鉴代码，可删除，）
+              |--components //  不明组件（仅借鉴代码，可删除，）
+              |--delivery-detail //  交付详情（可调整成为任务交付详情页面）
+              |--bindBankCard// 银行卡绑定页面√
+              |--order-confirm // 订单确认页面 （可调整成任务确认页面）
+              |--order-list //  我发布的（可调整成“历史发布”“完成项目”“浏览记录”页面）
+              |--order-list2//  我接收的（可调整成任务提醒、当前需求、文件管理、历史任务界面）
+              |--pay-result //  单向任务支付成功界面
+   |   |-- popup //  弹窗综合
+              |--custom-close //
+                 |--register //  注册弹窗（代码已删除。可重编）
+                 |--task delivery // 任务交付弹窗（代码已删除。可重编。需求可后续提供）
+    |   |-- shenhe //  审核区间列表界面（未完成，需填充数据）
+    |   |-- talk //  对话记录界面（未完成，需填充数据、样式和逻辑）
+    |   |-- usercenter //  个人中心
+              |-- components //  不明组件（可删除）
+              |-- person-info // 个人信息设置页面（待修改为对外个人主页）
     |-- services	//	请求接口
     |-- style	//	公共样式与iconfont
     |-- utils	//	工具库

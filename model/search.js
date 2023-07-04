@@ -12,18 +12,16 @@ import { getGoodsList } from './goods';
 export function getSearchHistory() {
   return {
     historyWords: [
-      '鸡',
-      '电脑',
-      'iPhone12',
-      '车载手机支架',
-      '自然堂',
-      '小米10',
-      '原浆古井贡酒',
-      '欧米伽',
-      '华为',
-      '针织半身裙',
-      '氢跑鞋',
-      '三盒处理器',
+      '职业',
+      '工益发餐',
+      '运载',
+      '看病',
+      '产品制作',
+      '空调维修',
+      '法语教学',
+      '家教',
+      '插画',
+    
     ],
   };
 }
@@ -31,18 +29,16 @@ export function getSearchHistory() {
 export function getSearchPopular() {
   return {
     popularWords: [
-      '鸡',
-      '电脑',
-      'iPhone12',
-      '车载手机支架',
-      '自然堂',
-      '小米10',
-      '原浆古井贡酒',
-      '欧米伽',
-      '华为',
-      '针织半身裙',
-      '氢跑鞋',
-      '三盒处理器',
+      '职业',
+      '工益发餐',
+      '运载',
+      '看病',
+      '产品制作',
+      '空调维修',
+      '法语教学',
+      '家教',
+      '插画',
+    
     ],
   };
 }
