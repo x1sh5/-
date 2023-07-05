@@ -1,33 +1,58 @@
 <!--components/cardinfo/cardinfo.wxml-->
-<!-- 任务展示信息 -->
-<view class="border" style="width: 264px; height: 195px; display: block; box-sizing: border-box">
-<view class="section" style="width: 570rpx; height: 122rpx; display: block; box-sizing: border-box">
-        <view class="title" style="width: 296rpx; height: 40rpx; display: block; box-sizing: border-box">需求内容：</view>
-        <input style="width: 296rpx; height: 120rpx; display: block; box-sizing: border-box; left: 0rpx; top: 0rpx" class="input" name="code" placeholder="一句话简述任务内容" />
-        <input style="width: 244rpx; height: 228rpx; display: block; box-sizing: border-box; left: 326rpx; top: -231rpx; position: relative" class="input1" name="code" placeholder="简称" />
-</view>
-<view class="section">
-        <view class="row">
-          <picker bindchange="feedbackRatioChange" value="{{feedbackRatioIndex}}" range="{{feedbackRatioRange}}" class="input-small" name="feedbackRatio" style="width: 263rpx; height: 94rpx; display: block; box-sizing: border-box">
-            <view class="picker">回馈比: {{feedbackRatioRange[feedbackRatioIndex]}}%</view>
-          </picker>
-          <!-- 添加输入框的逻辑 -->
-          <view wx:if="{{feedbackRatioRange.length === 1 && feedbackRatioRange[0] === 100}}" style="width: 176rpx; height: 66rpx; display: block; box-sizing: border-box; position: relative; left: 197rpx; top: -94rpx">
-            <input style="width: 193rpx; height: 66rpx; display: block; box-sizing: border-box; left: 0rpx; top: 0rpx; position: relative" class="input-small" name="customFeedbackRatio" placeholder="具体金额" />
+
+<!-- 任务卡片 -->
+<view class="task{{task.$id%3}} columnlayout" >
+  <!-- 上部分，包括： 标题，类型，工时，回馈 两行 -->
+  <view class="task-top rowlayout">
+    <!-- 左半部分，包括：标题，工时，回馈比 -->
+    <view class="task-top-left columnlayout">
+    <!-- 第一层：需求内容 编号 -->
+      <view class="rowlayout">
+        <view class="fontcolor{{task.$id%3}} poster" >需求内容</view>
+        <!-- 序列号 -->
+        <view class="serialNo">k8963245{{task.id}}</view>
+      </view>
+      <!-- 第二层：标题 -->
+      <view class="title">
+        <textarea disabled="{{!editable}}" class="brief" value="{{task.title}}" placeholder="一句话简述任务内容">
+        </textarea>
+      </view>
+      <!-- 第三层：预计工时，回馈 -->
+      <view class="timeandreward">
+          <!-- 预计工时 -->
+          <view class="columnlayout spendtime">
+            <view class="fontcolor{{task.$id%3}}">预计工时</view>
+            <view class="rowlayout">
+              <input maxlength="8" disabled="{{!editable}}" type="digit" value="{{spendtime}}" class="input" />h
+            </view>
+            
           </view>
-          <picker bindchange="timeChange" value="{{time}}" mode="multiSelector" range="{{timeRange}}" class="input-small" name="time" style="width: 263rpx; height: 94rpx; display: block; box-sizing: border-box; position: relative; left: 0rpx; top: -66rpx">
-            <view class="picker" style="width: 312rpx; height: 57rpx; display: block; box-sizing: border-box">预计工时: {{time}}</view>
-          </picker>
+          <!-- 回馈值 -->
+          <view class="columnlayout reward">
+            <view class="fontcolor{{task.$id%3}}">回馈值</view>
+            <view>{{task.reward}}%</view>
+          </view>
+          
         </view>
-</view>
-<view class="section" style="width: 209rpx; height: 122rpx; display: block; box-sizing: border-box; position: relative; left: 390rpx; top: -329rpx">
-        <view class="title1" style="width: 200rpx; height: 52rpx; display: block; box-sizing: border-box; position: relative; left: 10rpx; top: 10rpx">发卡人：</view>
-        <input style="width: 160rpx; height: 17rpx; display: block; box-sizing: border-box; position: relative; font-size: 25rpx;left: 10rpx; top: -22rpx" type="nickname" name="nickname" placeholder="当前微信名" />
-</view>
-<view class="section" style="position: relative; left: 0rpx; top: -282rpx">
-        <view class="title" style="position: relative; left: 0rpx; top: -33rpx">任务说明：</view>
-        <label for="info" class="input" style="position: relative; left: 0rpx; top: -19rpx">
-          <textarea id="info" name="info" placeholder="*要求任务需求、制作方法明确，步骤条理清晰。验收核对皆以任务说明为准。" maxlength="10000" style="width: 570rpx; height: 343rpx; display: block; box-sizing: border-box; left: 0rpx; top: 0rpx; position: relative"></textarea>
-        </label>
-</view>
+    </view>
+    <!-- 右半部分，只包括：类型 -->
+    <view class="task-top-right columnlayout" >
+        <view class="tasktype columnlayout">类型</view>
+    </view>
+  </view>
+  <!-- 部门，发起人，状态 -->
+  <view class="task-bottom rowlayout">
+   <!-- 部门 -->
+   <!-- range-key 用于指定显示名称属性值 -->
+    <picker disabled="{{!editable}}" range="{{departments}}" range-key="{{'name'}}"
+     class="department fontcolor{{task.$id%3}}" bindchange="bindPickerChange">
+     {{departments[index]["name"]}}部</picker>
+    <!-- 发起人 -->
+    <view class="organigerpart">
+      <view>liudehua{{task.publishid}}</view>
+      <view class="fontcolor{{task.$id%3}}">发起人</view>
+    </view>
+    <!-- 状态 -->
+    <view class="status">代接</view>
+  </view>
 </view>

@@ -1,0 +1,184 @@
+/* components/cardinfo/cardinfo.wxss */
+/**index.wxss**/
+@import url('/common/common.less');
+
+.size(@width,@height){
+  width: @width;
+  height: @height;
+}
+
+.example1{
+  .size(200px,300px);
+}
+
+.colorset(@color){
+  color: @color;
+}
+//
+.fontcolor0{
+  .colorset(rgb(30, 30, 245));
+}
+.fontcolor1{
+  color: rgb(20, 226, 226);
+}
+.fontcolor2{
+  color: rgb(45, 145, 238);
+}
+
+.task(){
+  height: 195px;
+  width: 100%;
+  align-self: center;
+  position: relative;
+  border: 2px solid #04882c;
+  margin: 0px 5px;
+  z-index: 0;
+}
+.taskbefore(){
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  content: "";
+  position: absolute;
+  clip-path: circle(11rem at 100% 2rem);
+  z-index: -1;
+}
+
+.task0{
+  .task();
+}
+
+.task0:before{
+  .taskbefore();
+  background-color: rgb(30, 30, 245);
+
+}
+
+.task1{
+  .task();
+}
+
+.task1:before{
+  .taskbefore();
+  background-color: rgb(20, 226, 226);
+}
+
+.task2{
+  .task();
+}
+
+.task2:before{
+  .taskbefore();
+  background-color: rgb(45, 145, 238);
+}
+
+
+.task-top{
+height: 70%;
+z-index: 99;
+}
+
+.task-bottom{
+display: flex;
+flex-direction: row;
+z-index: 99;
+}
+
+.task-top-left{
+width: 50%;
+}
+
+.task-top-right{
+  width: 50%;
+  align-self: flex-end;
+  align-content: flex-end;
+}
+
+.tasktype{
+  bottom: 0px;
+  right: 0px;
+  font-size: 2cm;
+  font-style: italic;
+  color:white;
+  //position:fixed;
+  // align-self: flex-end;
+  // align-content: flex-end;
+}
+
+.margin-top5{
+  margin-top: 5px;
+}
+
+//预计用时
+.spendtime{
+  width: 50%;
+  margin-right: 5px;
+}
+
+//回馈
+.reward{
+  width: 50%;
+  //margin-top: 5px;
+}
+
+.margin-right10{
+  margin-right:10px;
+}
+.serialNo{
+  display: flex;
+  flex-direction: column;
+  align-self: flex-end;
+  font-size: x-small;
+  margin-left: 2px;
+}
+
+.poster{
+  //.italic();
+  margin-right: 2px;
+}
+
+.department{
+  .margin-right10();
+  font-size: 1.2cm;
+}
+
+.organigerpart{
+  .columnlayout();
+  .margin-right10();
+  display: flex;
+  padding-bottom: 5px;
+  align-self: flex-end;
+}
+
+.status{
+  .margin-right10();
+  height: 32px;
+  border: 2px solid rgb(241, 91, 4);
+  border-radius: 50%;
+  color: white;
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+.timeandreward{
+  .rowlayout();
+  .margin-top5();
+}
+
+.title{
+  .blackcolor();
+  .margin-top5();
+  height: 62%;
+}
+.input{
+  width: 60%;
+  text-align: center;
+  border-bottom: 1px,slategray,dashed;
+}
+.brief{
+  .title();
+  width: 100%;
+  white-space: pre-wrap;
+}
+

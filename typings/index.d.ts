@@ -6,3 +6,14 @@ interface IAppOption {
   }
   userInfoReadyCallback?: WechatMiniprogram.GetUserInfoSuccessCallback,
 }
+
+interface Branch{
+  $id:string,
+  id:number,
+  name:string,
+  description:string
+}
+
+interface TaskType extends Branch{
+  level:number
+}

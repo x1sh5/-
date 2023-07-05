@@ -15,6 +15,7 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "strict": true,
+    "outDir": "build",
     "strictPropertyInitialization": true,
     "lib": ["ES2020"],
     "typeRoots": [
@@ -22,8 +23,8 @@
     ]
   },
   "include": [
+    "./**/*.js",
     "./**/*.ts",
-    "./**/*.js"
   ],
   "exclude": [
     "node_modules"

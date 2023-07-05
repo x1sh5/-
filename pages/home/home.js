@@ -151,6 +151,7 @@ Page({
       pageLoading: true,
     });
     fetchHome().then(({ swiper, tabList }) => {
+      console.log("tablist:",tabList)
       this.setData({
         tabList,
         imgSrcs: swiper,
