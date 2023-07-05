@@ -5,9 +5,10 @@ import {
   fetchGoodsList
 } from '../../services/good/fetchGoods';
 
-async function fetchUserData(userId) {
+const app = getApp();
+
+async function fetchTasks(userId) {
   return new Promise((resolve, reject) => {
-    const app = getApp();
     wx.request({
       //直接使用地址拼接
       url: `${app.globalData.apiBaseUrl}/Assignment/`+(isNaN(parseInt(userId))?'':userId),
@@ -91,8 +92,7 @@ Page({
     //loadHomePage()函数
     this.loadHomePage();
     try {
-      const data = await fetchUserData();
-
+      const data = await fetchTasks();
       console.log(data.$values);  // 查看返回的数据
       this.setData({
         //使用data.$values,我使用后端框架的默认数据格式，后面会调整
@@ -106,7 +106,7 @@ Page({
   onLoad:async function (options) {
     const { userId } = options;
     try {
-      const data = await fetchUserData(userId);
+      const data = await fetchTasks(userId);
 
       console.log(data);  // 查看返回的数据
       const { username, email } = data;
@@ -151,7 +151,6 @@ Page({
       pageLoading: true,
     });
     fetchHome().then(({ swiper, tabList }) => {
-      console.log("tablist:",tabList)
       this.setData({
         tabList,
         imgSrcs: swiper,

@@ -1,5 +1,6 @@
 // components/cardinfo/cardinfo.ts
 import Department from '../../common/common.js';
+const app = getApp();
 Component({
   /**
    * 组件的属性列表
@@ -31,17 +32,7 @@ Component({
     spendtime:"",
     _deparment:"",
     index:0,
-    departments:[
-     new Department(0,"建设"),
-      {
-        id:1,
-        name:"审核"
-      },
-      {
-        id:2,
-        name:"制作"
-      },
-    ]
+    departments:app.globalData.branchs
   },
 
   /**

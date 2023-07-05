@@ -37,7 +37,7 @@
     </view>
     <!-- 右半部分，只包括：类型 -->
     <view class="task-top-right columnlayout" >
-        <view class="tasktype columnlayout">类型</view>
+        <view class="tasktype columnlayout">{{ }}</view>
     </view>
   </view>
   <!-- 部门，发起人，状态 -->
