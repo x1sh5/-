@@ -2,6 +2,7 @@ const app = getApp();
 
 Page({
   data: {
+    tasktype:[],
     cards: [
       { id: '1'},
       
@@ -157,6 +158,7 @@ Page({
   onLoad: function () {
     this.setData({
       cards: app.globalData.cards,
+      tasktype:app.globalData.tasktypes
     });
   },
 

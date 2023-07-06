@@ -1,5 +1,6 @@
 
 <!--components/taskcard/taskcard.wxml-->
+<view class="card" style="width: 680rpx; height: 1533rpx; display: block; box-sizing: border-box; position: relative; left: -5rpx; top: -15rpx">
 <cardinfo task="{{task}}" editable="{{true}}" />
       
       ---------------------------------- <!-- 分割线-->
@@ -50,4 +51,5 @@
 <view class="taskcard">
   <text>{{data.title}}</text>
   <text>{{data.content}}</text>
+</view>
 </view>

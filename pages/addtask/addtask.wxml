@@ -56,7 +56,7 @@
 <view desc="组合按钮" style="position: relative; left: 0rpx; top: 104rpx">
   <view class="title4" style="width: 361rpx; height: 78rpx; display: block; box-sizing: border-box; position: relative; left: 40rpx; top: -50rpx">+点击添加新分项</view>
   <t-tabs defaultValue="{{0}}" theme="tag">
-    <t-tab-panel wx:for="{{ tasktypes }}" wx:key="index" label="选项" value="{{index}}" />
+    <t-tab-panel wx:for="{{ tasktypes }}" wx:key="index" label="{{item.name}}" value="{{index}}" />
   </t-tabs>
 </view>
 <view desc="buttons">

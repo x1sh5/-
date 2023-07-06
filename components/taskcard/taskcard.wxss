@@ -1,5 +1,5 @@
 
-/* 卡片设置*/
+/* 任务编辑容器 */
 .card {
   border: 0rpx solid rgb(241, 241, 241);
   padding: 0rpx;
@@ -7,7 +7,13 @@
   margin: 40rpx;
   border-radius: 20rpx;
   overflow: hidden;
-  
+  width: 290px; 
+  height: 654px; 
+  display: block; 
+  box-sizing: border-box; 
+  position: relative; 
+  left: -2px; 
+  top: -6px
   
 }
  /* 黑色边框 */

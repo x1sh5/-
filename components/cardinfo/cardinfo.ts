@@ -33,7 +33,8 @@ Component({
     _deparment:"",
     index:0,
     departments:[],
-    tasktype:"类型"
+    tasktype:"类型",
+    status:["代接","完成","审核中"]
   },
 
   /**
@@ -53,7 +54,7 @@ Component({
   lifetimes:{
     attached:function (){
       //console.log("attached")
-      const department = app.globalData.tasktypes.find(item => item.id === 4);
+      const department = app.globalData.tasktypes.find(item => item.id === this.data.task.typeid);
         this.setData({
           spendtime:(this.properties.task.presumedtime/100).toFixed(2),
           departments:app.globalData.branchs,

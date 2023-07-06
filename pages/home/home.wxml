@@ -38,5 +38,5 @@
 </view> -->
  <!-- 渲染重复布局..*待定. -->
  <view wx:for="{{tasks}}" wx:key="id" style="margin-top:5px;">
-  <cardinfo task="{{item}}" editable="{{true}}" style="margin-top:5px;"/>
+  <cardinfo task="{{item}}" editable="{{false}}" style="margin-top:5px;"/>
 </view>
