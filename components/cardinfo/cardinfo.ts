@@ -32,7 +32,8 @@ Component({
     spendtime:"",
     _deparment:"",
     index:0,
-    departments:app.globalData.branchs
+    departments:[],
+    tasktype:"类型"
   },
 
   /**
@@ -52,8 +53,11 @@ Component({
   lifetimes:{
     attached:function (){
       //console.log("attached")
+      const department = app.globalData.tasktypes.find(item => item.id === 4);
         this.setData({
           spendtime:(this.properties.task.presumedtime/100).toFixed(2),
+          departments:app.globalData.branchs,
+          tasktype:department ? department.name : null
         })
     },
     // ready:function(){

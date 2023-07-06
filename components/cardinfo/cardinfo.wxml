@@ -37,7 +37,7 @@
     </view>
     <!-- 右半部分，只包括：类型 -->
     <view class="task-top-right columnlayout" >
-        <view class="tasktype columnlayout">{{ }}</view>
+        <view class="tasktype columnlayout">{{ tasktype }}</view>
     </view>
   </view>
   <!-- 部门，发起人，状态 -->
@@ -46,7 +46,7 @@
    <!-- range-key 用于指定显示名称属性值 -->
     <picker disabled="{{!editable}}" range="{{departments}}" range-key="{{'name'}}"
      class="department fontcolor{{task.$id%3}}" bindchange="bindPickerChange">
-     {{departments[index]["name"]}}部</picker>
+     {{departments[index]["name"]}}</picker>
     <!-- 发起人 -->
     <view class="organigerpart">
       <view>liudehua{{task.publishid}}</view>

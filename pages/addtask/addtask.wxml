@@ -41,7 +41,7 @@
   <task-card wx:for="{{cards}}" wx:key="{{item.id}}" card-id="{{item.id}}" taskData="{{item.data}}" bind:delete="deleteTaskCard"></task-card>
 </view>
 
-<t-demo desc="组合按钮" style="position: relative; left: 0rpx; top: 104rpx">
+<!-- <view desc="组合按钮" style="position: relative; left: 0rpx; top: 104rpx">
   <view class="title4" style="width: 361rpx; height: 78rpx; display: block; box-sizing: border-box; position: relative; left: 40rpx; top: -50rpx">+点击添加新分项</view>
   <view class="button-group" style="position: relative; left: 0rpx; top: 31rpx; width: 750rpx; height: 78rpx; display: block; box-sizing: border-box">
     <button class="button4" bindtap="addtaskcard" style="position: relative; left: -291rpx; top: -68rpx; width: 99rpx; height: 36rpx; display: block; box-sizing: border-box">审核</button>
@@ -52,11 +52,16 @@
     <button class="button4" bindtap="addConstruction" style="position: relative; left: 202rpx; top: -244rpx; width: 99rpx; height: 36rpx; display: block; box-sizing: border-box">建设</button>
     <button class="button4" bindtap="addProduction" style="position: relative; left: 300rpx; top: -279rpx; width: 99rpx; height: 36rpx; display: block; box-sizing: border-box">制作</button> 
   </view>
-</t-demo>
-
-<t-demo desc="组合按钮2">
+</view> -->
+<view desc="组合按钮" style="position: relative; left: 0rpx; top: 104rpx">
+  <view class="title4" style="width: 361rpx; height: 78rpx; display: block; box-sizing: border-box; position: relative; left: 40rpx; top: -50rpx">+点击添加新分项</view>
+  <t-tabs defaultValue="{{0}}" theme="tag">
+    <t-tab-panel wx:for="{{ tasktypes }}" wx:key="index" label="选项" value="{{index}}" />
+  </t-tabs>
+</view>
+<view desc="buttons">
   <view class="button-group" style="width: 750rpx; height: 422rpx; display: block; box-sizing: border-box; position: relative; left: 0rpx; top: 84rpx">
     <button class="button5" bindtap="button5Click" style="position: relative; left: 0rpx; top: 54rpx; width: 458rpx; height: 68rpx; display: flex; justify-content: center; align-items: center; box-sizing: border-box">保存草稿</button>
     <button class="button6" bindtap="publishTasks" style="position: relative; left: 0rpx; top: 85rpx; width: 458rpx; height: 68rpx; display: flex; justify-content: center; align-items: center; box-sizing: border-box">审核发布</button>
   </view>
-</t-demo>
+</view>

@@ -6,6 +6,7 @@ Page({
       { id: '1'},
       
     ],
+    tasktypes:app.globalData.branchs,
     submittedTaskData: [],
     nextId: 1,
     name: '',

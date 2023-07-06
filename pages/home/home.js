@@ -7,11 +7,11 @@ import {
 
 const app = getApp();
 
-async function fetchTasks(userId) {
+async function fetchTasks(urlpath) {
   return new Promise((resolve, reject) => {
     wx.request({
       //直接使用地址拼接
-      url: `${app.globalData.apiBaseUrl}/Assignment/`+(isNaN(parseInt(userId))?'':userId),
+      url: `${app.globalData.apiBaseUrl}`+urlpath,
       method: "GET",
       // data 模式会转换成url参数，也就是url会转换成 ${app.globalData.apiBaseUrl}/Assignment?userId=
       //但真实的请求应该是 ${app.globalData.apiBaseUrl}/Assignment/userId
@@ -34,8 +34,11 @@ async function fetchTasks(userId) {
 
 Page({
   data: {
+    //任务列表
     tasks: [],
+    //轮播图
     imgSrcs: [],
+    //任务类型列表
     tabList: [],
     goodsList: [],
     goodsListLoadStatus: 0,
@@ -55,7 +58,7 @@ Page({
     users: [],
     username: '',
     email: '',
-    articles: []
+    //articles: []
   },
 
   goodListPagination: {
@@ -67,7 +70,7 @@ Page({
     tabIndex: 0,
   },
 
-  handleArticleClick(event) {
+  handleItemClick(event) {
     const article = event.currentTarget.dataset.article;
 
     if (!this.data.isRegistered) {
@@ -92,7 +95,7 @@ Page({
     //loadHomePage()函数
     this.loadHomePage();
     try {
-      const data = await fetchTasks();
+      const data = await fetchTasks("/Assignment/");
       console.log(data.$values);  // 查看返回的数据
       this.setData({
         //使用data.$values,我使用后端框架的默认数据格式，后面会调整
@@ -106,10 +109,10 @@ Page({
   onLoad:async function (options) {
     const { userId } = options;
     try {
-      const data = await fetchTasks(userId);
+      // const data = fetchTasks(userId);
 
-      console.log(data);  // 查看返回的数据
-      const { username, email } = data;
+      // console.log(data);  // 查看返回的数据
+      const { username, email } = {a:"username",b:"email"};
       this.setData({
         username: username,
         email: email,
@@ -119,20 +122,20 @@ Page({
     }
   },
 
-  fetchArticles() {
-    // 示例：使用 setTimeout 模拟异步请求
-    setTimeout(() => {
-      this.setData({
-        articles: [
-          // 您的实际文章数据
-        ],
-      });
-    }, 1000);
-  },
+  // fetchArticles() {
+  //   // 示例：使用 setTimeout 模拟异步请求
+  //   setTimeout(() => {
+  //     this.setData({
+  //       articles: [
+  //         // 您的实际文章数据
+  //       ],
+  //     });
+  //   }, 1000);
+  // },
 
   onReachBottom() {
     if (this.data.goodsListLoadStatus === 0) {
-      this.loadGoodsList();
+      //this.loadGoodsList();
     }
   },
 
@@ -145,16 +148,15 @@ Page({
   },
 
  loadHomePage: function(){
-    wx.stopPullDownRefresh();
-
+    //wx.stopPullDownRefresh();
+    console.log("pageLoading",this.data.pageLoading)
     this.setData({
-      pageLoading: true,
+      pageLoading: false,
     });
     fetchHome().then(({ swiper, tabList }) => {
       this.setData({
         tabList,
         imgSrcs: swiper,
-        pageLoading: false,
       });
 
       const tabIndex = this.privateData.tabIndex;
@@ -165,66 +167,83 @@ Page({
         goodsListLoadStatus: 0,
       });
 
-      this.loadGoodsList(true);
+      //this.loadGoodsList(true);
     });
   },
 
-  tabChangeHandle(e) {
-    this.privateData.tabIndex = e.detail;
-    this.loadGoodsList(true);
-  },
-
-  onReTry() {
-    this.loadGoodsList();
-  },
-
-  async loadGoodsList(fresh = false) {
-    if (fresh) {
-      wx.pageScrollTo({
-        scrollTop: 0,
+  async tabChangeHandle(e) {
+    console.log(e)
+    this.privateData.tabIndex = e.detail.value;
+    //this.loadGoodsList(true);
+    const typeid = app.globalData.tasktypes.find(item => item.name === e.detail.label);
+    try {
+      const data = await fetchTasks("/Assignment/type/"+typeid.id);
+      console.log(data.$values);  // 查看返回的数据
+      this.setData({
+        //使用data.$values,我使用后端框架的默认数据格式，后面会调整
+        tasks: data.$values
       });
-    }
-
-    this.setData({
-      goodsListLoadStatus: 1
-    });
-
-    const pageSize = this.goodListPagination.num;
-    let pageIndex = this.privateData.tabIndex * pageSize + this.goodListPaginationindex;
-
-    if (fresh) {
-      pageIndex = 0;
-    }
-
-    const goodsList = await fetchGoodsList({
-      pageSize,
-      pageIndex,
-    });
-
-    const newGoodsList = goodsList.map((item) => {
-      return {
-        ...item,
-        tabKey: this.privateData.tabIndex,
-      };
-    });
-
-    let finalGoodsList;
-
-    if (fresh) {
-      finalGoodsList = newGoodsList;
-    } else {
-      finalGoodsList = this.data.goodsList.concat(newGoodsList);
-    }
-
-    this.setData({
-      goodsList: finalGoodsList,
-      goodsListLoadStatus: goodsList.length > 0 ? 0 : 2,
-    });
-
-    if (fresh) {
-      this.goodListPagination.index = 1;
-    } else {
-      this.goodListPagination.index += 1;
+    } catch (error) {
+      console.error("Error getting data from the API:", error);
     }
   },
+
+  // onReTry() {
+  //   this.loadGoodsList();
+  // },
+
+  async loadItemsData(fresh = false){
+
+  }
+  
+  // async loadGoodsList(fresh = false) {
+  //   if (fresh) {
+  //     wx.pageScrollTo({
+  //       scrollTop: 0,
+  //     });
+  //   }
+
+  //   this.setData({
+  //     goodsListLoadStatus: 1
+  //   });
+
+  //   const pageSize = this.goodListPagination.num;
+  //   let pageIndex = this.privateData.tabIndex * pageSize + this.goodListPaginationindex;
+
+  //   if (fresh) {
+  //     pageIndex = 0;
+  //   }
+
+  //   const goodsList = await fetchGoodsList({
+  //     pageSize,
+  //     pageIndex,
+  //   });
+
+  //   const newGoodsList = goodsList.map((item) => {
+  //     return {
+  //       ...item,
+  //       tabKey: this.privateData.tabIndex,
+  //     };
+  //   });
+
+  //   let finalGoodsList;
+
+  //   if (fresh) {
+  //     finalGoodsList = newGoodsList;
+  //   } else {
+  //     finalGoodsList = this.data.goodsList.concat(newGoodsList);
+  //   }
+
+  //   this.setData({
+  //     goodsList: finalGoodsList,
+  //     goodsListLoadStatus: goodsList.length > 0 ? 0 : 2,
+  //   });
+
+  //   if (fresh) {
+  //     this.goodListPagination.index = 1;
+  //   } else {
+  //     this.goodListPagination.index += 1;
+  //   }
+  // },
+
 });

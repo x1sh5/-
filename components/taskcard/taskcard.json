@@ -1,8 +1,7 @@
 {
   "component": true,
   "usingComponents": {
-    "task-card": "/components/taskcard/taskcard",
-    "taskcard": "/components/taskcard/taskcard",
+    "cardinfo": "/components/cardinfo/cardinfo",
     "t-search": "tdesign-miniprogram/search/search",
     "t-loading": "tdesign-miniprogram/loading/loading",
     "t-swiper": "tdesign-miniprogram/swiper/swiper",
@@ -13,6 +12,5 @@
     "t-tabs": "tdesign-miniprogram/tabs/tabs",
     "t-tab-panel": "tdesign-miniprogram/tab-panel/tab-panel",
     "goods-list": "/components/goods-list/index",
-    "card": "/components/taskcard/taskcard",
     "load-more": "/components/load-more/index"}
 }
