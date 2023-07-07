@@ -6,7 +6,7 @@ function generateRange(start, end) {
   }
   return range;
 }
-
+var editorBehavor = require('./Behavor1')
 Component({
   properties: {
     cardId: {
@@ -31,6 +31,7 @@ Component({
     showInput: false,
     feedbackRatio: ""
   },
+  behaviors:[editorBehavor],
   methods: {
     deleteCard: function () {
       this.triggerEvent("delete", { id: this.data.cardId });

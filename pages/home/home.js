@@ -112,7 +112,7 @@ Page({
       // const data = fetchTasks(userId);
 
       // console.log(data);  // 查看返回的数据
-      const { username, email } = {a:"username",b:"email"};
+      const { username, email } = {username:"username",email:"email"};
       this.setData({
         username: username,
         email: email,

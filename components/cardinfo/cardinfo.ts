@@ -34,9 +34,24 @@ Component({
     index:0,
     departments:[],
     tasktype:"类型",
-    status:["代接","完成","审核中"]
+    status:["代接","完成","审核中"],
+    rewardtype: {
+      value: '￥',
+      options: [
+        {
+          label: '元',
+          value: '￥',
+        },
+        {
+          lable: '百分比',
+          value: '%',
+        },]
+      }
   },
 
+  options:{
+    styleIsolation: 'isolated'
+  },
   /**
    * 组件的方法列表
    */
@@ -47,10 +62,14 @@ Component({
         index: e.detail.value
       })
     },
+    onChange(e) {
+      console.log(e)
+      this.setData({
+        'rewardtype.value': e.detail.value,
+      });
+    },
   },
-  options:{
-    styleIsolation: 'isolated'
-  },
+
   lifetimes:{
     attached:function (){
       //console.log("attached")

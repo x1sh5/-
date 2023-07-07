@@ -23,14 +23,23 @@
           <view class="columnlayout spendtime">
             <view class="fontcolor{{task.$id%3}}">预计工时</view>
             <view class="rowlayout">
-              <input maxlength="8" disabled="{{!editable}}" type="digit" value="{{spendtime}}" class="input" />h
+              <input maxlength="8" disabled="{{!editable}}" type="digit" 
+              value="{{ editable? '':spendtime }}" class="input" />h
             </view>
             
           </view>
           <!-- 回馈值 -->
           <view class="columnlayout reward">
             <view class="fontcolor{{task.$id%3}}">回馈值</view>
-            <view>{{task.reward}}%</view>
+            <view class="rowlayout">
+              <view style="width: 40px;border-bottom: 1px dashed gray;">{{task.reward}}</view>
+              <view>{{ rewardtype.value }}</view>
+              <t-dropdown-menu style="width: 20px;height: 20px;">
+                <t-dropdown-item style="z-index: 99;align-self: center;align-items: center;align-content: center;text-align: right;" 
+                options="{{ rewardtype.options}}" value="{{rewardtype.label}}"
+                 bindchange="onChange" />
+              </t-dropdown-menu>
+            </view>
           </view>
           
         </view>
@@ -48,7 +57,7 @@
      class="department fontcolor{{task.$id%3}}" bindchange="bindPickerChange">
      {{editable ? departments[index]["name"] : departments[task.branchid]["name"]}}</picker>
     <!-- 发起人 -->
-    <view class="organigerpart">
+    <view class="organigerpart" wx:if="{{ !editable }}">
       <view>{{task.username}}</view>
       <view class="fontcolor{{task.$id%3}}">发起人</view>
     </view>
