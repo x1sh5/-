@@ -38,7 +38,7 @@
 </view>
 
 <view>
-  <task-card wx:for="{{cards}}" wx:key="{{item.id}}" card-id="{{item.id}}" taskData="{{item.data}}" bind:delete="deleteTaskCard"></task-card>
+  <taskcard wx:for="{{cards}}" wx:key="id" card-id="{{item.id}}" taskData="{{item.data}}" bind:delete="deleteTaskCard"></taskcard>
 </view>
 
 <!-- <view desc="组合按钮" style="position: relative; left: 0rpx; top: 104rpx">
