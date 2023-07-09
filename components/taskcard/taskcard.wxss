@@ -1,3 +1,54 @@
+@import url('./style/weui.wxss');
+@import url('./style/iconfont.wxss');
+
+/* editor */
+.container {
+  position: absolute; 
+  top: 0; 
+  left: 0; 
+  width: 100%;
+}
+
+.ql-container {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  font-size: 16px;
+  line-height: 1.5;
+  overflow: auto;
+  padding: 10px 10px 20px 10px;
+  border: 1px solid #ECECEC;
+}
+
+.ql-active {
+  color: #22C704;
+}
+
+.iconfont {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.toolbar {
+  box-sizing: border-box;
+  padding: 0 10px;
+  height: 50px;
+  width: 100%;
+  position: fixed;
+  left: 0;
+  right: 100%;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid #ECECEC;
+  border-left: none;
+  border-right: none;
+}
+
 
 /* 任务编辑容器 */
 .card {
@@ -14,7 +65,7 @@
   position: relative; 
   left: -2px; 
   top: -6px
-  
+
 }
  /* 黑色边框 */
  .border {
@@ -30,29 +81,47 @@
   margin-bottom: 1rpx;
   font-weight: bold;
 }
-.info{
+#info{
   color:#080808; 
   font-size: 30rpx;
-
+  width: 570rpx;
+   height: 828rpx; 
+   display: block; 
+   box-sizing: border-box; 
+   left: 0rpx; 
+   top: -26rpx; 
+   position: relative;
 }
 
 /* 需求内容*/
 .section {
   margin-bottom: 10rpx;
+  position: relative; 
+  left: 0rpx;
+   top: -96rpx;
 }
 /* 需求内容、任务说明文字样式*/
 .title {
   font-weight: bold;
   margin-bottom: 5rpx;
   font-size: 30rpx;
-  
+  position: relative;
+   left: 0rpx; 
+   top: 26rpx;
+   
 }
 /* 发卡人、上传。。。文字样式*/
 .title1 {
   font-weight: bold;
   margin-bottom: 5rpx;
   font-size: 25rpx;
-  
+  width: 394rpx; 
+  height: 60rpx; 
+  display: block; 
+  box-sizing: border-box; 
+  position: relative; 
+  left: -460rpx; 
+  top: 136rpx;
 }
 /* 一句话、具体金额、当前微信名*/
 .input {
@@ -63,6 +132,9 @@
   outline: none;
   font-size: 30rpx;
   color: #494949;
+  position: relative; 
+  left: 0rpx; 
+  top: 52rpx;
 }
 /* 简称*/
 .input1 {
@@ -124,6 +196,13 @@ textarea.input {
 /* 上传文件按钮*/
 .upload-section {
   margin-top: 10rpx;
+  width: 143rpx; 
+  height: 108rpx; 
+  display: block; 
+  box-sizing: border-box; 
+  position: relative; 
+  left: 8rpx; 
+  top: -11rpx;
 }
 
 .upload-list {
@@ -137,6 +216,16 @@ textarea.input {
 .upload-image {
   width: 100%;
   height: auto;
+}
+
+.upload-button{
+  width: 118rpx; 
+  height: 108rpx; 
+  display: block; 
+  box-sizing: border-box; 
+  left: 13rpx; 
+  top: 0rpx; 
+  position: relative;
 }
 
 .upload-file {
